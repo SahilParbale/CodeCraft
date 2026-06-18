@@ -83,7 +83,6 @@ const Navbar = () => {
     { id: 'home', label: 'Home' },
     { id: 'products', label: 'Products' },
     { id: 'services', label: 'Services' },
-    { id: 'projects', label: 'Our Work' },
     { id: 'contact', label: 'Contact Us' }
   ];
 

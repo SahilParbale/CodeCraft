@@ -131,7 +131,7 @@ const Products = () => {
             Proprietary Software
           </span>
           <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontWeight: '600', fontSize: '2.8rem', marginTop: '1rem' }}>
-            Our Enterprise Suite
+            Our Projects
           </h2>
           <p className="section-subtitle" style={{ maxWidth: '650px', margin: '0 auto', fontSize: '1.05rem', color: '#64748b' }}>
             Explore our ready-to-deploy platforms designed to streamline operations, secure client relationships, and monitor critical infrastructure.
