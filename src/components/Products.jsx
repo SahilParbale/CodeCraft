@@ -8,6 +8,7 @@ import {
 import nagarsevakImg from '../assets/nagarsevak_dashboard.png';
 import voterImg from '../assets/voter_dashboard.png';
 import builderImg from '../assets/builder_dashboard.png';
+import gimbooksImg from '../assets/gimbooks_dashboard.png';
 
 const Products = () => {
   const navigate = useNavigate();
@@ -77,7 +78,7 @@ const Products = () => {
       id: 'buildermanager',
       category: 'Real Estate',
       name: 'Builder Management',
-      version: 'v1.5',
+      version: 'Coming Soon',
       tagline: 'End-to-end construction project & client management.',
       description: 'A unified platform for real estate developers to track construction progress, manage raw material inventory, handle buyer payments, and automate sales pipelines.',
       features: [
@@ -88,6 +89,24 @@ const Products = () => {
       ],
       image: builderImg,
       icon: <Monitor size={22} />,
+      gradient: 'linear-gradient(135deg, #ea580c 0%, #ffedd5 100%)',
+      accentColor: '#ea580c'
+    },
+    {
+      id: 'gimbooks',
+      category: 'Fintech',
+      name: 'Gimbooks',
+      version: 'v4.2',
+      tagline: 'Cloud-based accounting, invoicing & GST software.',
+      description: 'A comprehensive financial platform for SMEs to create GST compliant invoices, manage inventory, generate e-way bills, and track expenses seamlessly.',
+      features: [
+        'GST compliant invoice generation',
+        'Inventory management & tracking',
+        'E-way bill creation',
+        'Expense & ledger accounting'
+      ],
+      image: gimbooksImg,
+      icon: <Activity size={22} />,
       gradient: 'linear-gradient(135deg, #ea580c 0%, #ffedd5 100%)',
       accentColor: '#ea580c'
     }
@@ -505,9 +524,9 @@ const CraftPortalSandbox = () => {
   };
 
   return (
-    <div style={{ display: 'flex', width: '100%', height: '100%', fontFamily: "'Inter', sans-serif" }}>
+    <div className="sandbox-layout" style={{ fontFamily: "'Inter', sans-serif" }}>
       {/* Sidebar */}
-      <div style={{ width: '220px', background: '#0f172a', color: '#94a3b8', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', borderRight: '1px solid #e2e8f0' }}>
+      <div className="sandbox-sidebar">
         <div style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', color: '#e2e8f0', letterSpacing: '0.05em' }}>
           CraftPortal <span style={{ color: '#ea580c' }}>v2.4</span>
         </div>
@@ -521,7 +540,7 @@ const CraftPortalSandbox = () => {
       </div>
 
       {/* Main Workspace */}
-      <div style={{ flex: 1, padding: '1.5rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div className="sandbox-main" style={{ flex: 1, padding: '1.5rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {/* Welcome */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
@@ -552,7 +571,7 @@ const CraftPortalSandbox = () => {
         </div>
 
         {/* Grid: Shared Files & File Upload */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '1.5rem' }}>
+        <div className="grid-two-col">
           {/* File Cabinet */}
           <div style={{ background: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '1.25rem' }}>
             <h5 style={{ fontSize: '0.95rem', fontWeight: '700', color: '#0f172a', marginBottom: '1rem', fontFamily: "'Inter', sans-serif" }}>Secure File Cabinet</h5>
@@ -654,9 +673,9 @@ const CentralLinkSandbox = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', width: '100%', height: '100%', fontFamily: "'Inter', sans-serif" }}>
+    <div className="sandbox-layout" style={{ fontFamily: "'Inter', sans-serif" }}>
       {/* Left Sidebar */}
-      <div style={{ width: '220px', background: '#0f172a', color: '#94a3b8', padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', borderRight: '1px solid #e2e8f0' }}>
+      <div className="sandbox-sidebar">
         <div style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', color: '#e2e8f0', letterSpacing: '0.05em' }}>
           CentralLink Bridge
         </div>
@@ -669,7 +688,7 @@ const CentralLinkSandbox = () => {
       </div>
 
       {/* Main Panel */}
-      <div style={{ flex: 1, padding: '1.5rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative' }}>
+      <div className="sandbox-main" style={{ flex: 1, padding: '1.5rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1.5rem', position: 'relative' }}>
         {/* Toast Notification */}
         {toastMessage && (
           <div style={{
@@ -834,9 +853,9 @@ const MonitorCraftSandbox = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', width: '100%', height: '100%', background: '#0b0f19', color: '#94a3b8', fontFamily: 'monospace' }}>
+    <div className="sandbox-layout" style={{ background: '#0b0f19', color: '#94a3b8', fontFamily: 'monospace' }}>
       {/* Left Sidebar */}
-      <div style={{ width: '220px', background: '#020617', borderRight: '1px solid #1e293b', padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div className="sandbox-sidebar" style={{ background: '#020617', borderRight: '1px solid #1e293b' }}>
         <div style={{ fontSize: '0.8rem', fontWeight: '800', color: '#f8fafc', letterSpacing: '0.05em' }}>
           MONITORCRAFT <span style={{ color: '#ea580c' }}>v1.2</span>
         </div>
@@ -849,7 +868,7 @@ const MonitorCraftSandbox = () => {
       </div>
 
       {/* Main Terminal Dashboard */}
-      <div style={{ flex: 1, padding: '1.5rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <div className="sandbox-main" style={{ flex: 1, padding: '1.5rem', overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         
         {/* Top telemetry state */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #1e293b', paddingBottom: '1rem' }}>
@@ -893,7 +912,7 @@ const MonitorCraftSandbox = () => {
         </div>
 
         {/* Live Metrics Row: Ticking CPU Gauge & Live Terminal logs */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.8fr', gap: '1.5rem', minHeight: '220px' }}>
+        <div className="grid-two-col" style={{ minHeight: '220px' }}>
           
           {/* Gauges card */}
           <div style={{ background: '#020617', border: '1px solid #1e293b', borderRadius: '12px', padding: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>

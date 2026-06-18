@@ -62,7 +62,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
             
             {/* First Name & Last Name */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div className="grid-two-col">
               <div className="form-group" style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', alignItems: 'flex-start' }}>
                 <label htmlFor="firstName" style={{ fontWeight: '700', fontSize: '0.8rem', color: '#0f172a', fontFamily: "'Inter', sans-serif" }}>First name</label>
                 <input
@@ -192,10 +192,7 @@ const Contact = () => {
         </div>
 
         {/* Small Info Cards under form (No colored background squares, matching screenshot) */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: '1.5rem',
+        <div className="grid-two-col" style={{
           width: '100%',
           maxWidth: '640px'
         }}>
@@ -216,7 +213,7 @@ const Contact = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.1rem' }}>
               <span style={{ fontSize: '0.9rem', fontWeight: '700', color: '#0f172a', fontFamily: "'Inter', sans-serif" }}>Email</span>
-              <span style={{ fontSize: '0.85rem', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>support@codecraft.in</span>
+              <span style={{ fontSize: '0.85rem', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>jjadhavshreyas84@gmail.com</span>
             </div>
           </div>
 
@@ -237,7 +234,7 @@ const Contact = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.1rem' }}>
               <span style={{ fontSize: '0.9rem', fontWeight: '700', color: '#0f172a', fontFamily: "'Inter', sans-serif" }}>Phone</span>
-              <span style={{ fontSize: '0.85rem', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>+91 7058731515</span>
+              <span style={{ fontSize: '0.85rem', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>+91 7058731515, +91 8788114603</span>
             </div>
           </div>
         </div>

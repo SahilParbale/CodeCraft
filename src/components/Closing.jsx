@@ -1,7 +1,9 @@
 import React from 'react';
 import { Code2, ClipboardList, Headphones } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Closing = () => {
+  const navigate = useNavigate();
   return (
     <section className="closing-dark-section">
       <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
@@ -69,7 +71,7 @@ const Closing = () => {
             color: '#ffffff',
             marginBottom: '0.75rem'
           }}>
-            Reay to transform your business?
+            Ready to transform your business?
           </h3>
           <p className="closing-cta-text" style={{
             fontFamily: "'Inter', sans-serif",
@@ -81,7 +83,7 @@ const Closing = () => {
           </p>
           
           <div className="closing-cta-actions">
-            <button className="btn-cta-orange">Get Started now</button>
+            <button className="btn-cta-orange" onClick={() => navigate('/get-started')}>Get Started now</button>
             <button className="btn-cta-outline-white">Learn more</button>
           </div>
         </div>

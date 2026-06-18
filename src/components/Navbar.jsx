@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -51,6 +53,7 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
+    setIsMobileMenuOpen(false);
     
     if (location.pathname !== '/') {
       navigate('/');
@@ -130,8 +133,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Navigation Items (Right aligned) */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginLeft: 'auto' }}>
+        {/* Navigation Items (Desktop) */}
+        <div className="nav-links">
           {navLinks.map((link) => (
             <span 
               key={link.id}
@@ -150,22 +153,54 @@ const Navbar = () => {
             </span>
           ))}
           
-          <button style={{
-            background: '#1e293b',
-            color: '#ffffff',
-            border: 'none',
-            borderRadius: '9999px',
-            padding: '0.6rem 1.4rem',
-            fontSize: '0.85rem',
-            fontWeight: '600',
-            cursor: 'pointer',
-            marginLeft: '0.5rem',
-            fontFamily: "'Inter', sans-serif",
-            transition: 'background 0.2s'
-          }}
+          <button className="btn-get-started"
           onClick={() => navigate('/get-started')}
-          onMouseEnter={(e) => e.target.style.background = '#0f172a'}
-          onMouseLeave={(e) => e.target.style.background = '#1e293b'}
+          >
+            Get Started
+          </button>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="mobile-toggle"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        {/* Mobile Menu Drawer */}
+        <div className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-nav-links">
+            {navLinks.map((link) => (
+              <span 
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="mobile-nav-link"
+                style={{ 
+                  color: activeSection === link.id ? '#ea580c' : '#475569'
+                }}
+              >
+                {link.label}
+              </span>
+            ))}
+          </div>
+          <button 
+            style={{
+              background: '#111827',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '9999px',
+              padding: '1rem',
+              fontSize: '1rem',
+              fontWeight: '600',
+              cursor: 'pointer',
+              fontFamily: "'Inter', sans-serif",
+              width: '100%'
+            }}
+            onClick={() => {
+              navigate('/get-started');
+              setIsMobileMenuOpen(false);
+            }}
           >
             Get Started
           </button>

@@ -9,12 +9,7 @@ const Footer = () => {
       padding: '5rem 0 4rem 0',
       borderTop: '1px solid rgba(255, 255, 255, 0.05)'
     }}>
-      <div className="container" style={{
-        display: 'grid',
-        gridTemplateColumns: '1.2fr 0.8fr 0.8fr 1.2fr',
-        gap: '4rem',
-        textAlign: 'left'
-      }}>
+      <div className="container footer-grid">
         
         {/* Column 1: Brand Info */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -121,13 +116,13 @@ const Footer = () => {
             {/* Phone */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
               <Phone size={14} style={{ color: '#94a3b8' }} />
-              <span>+91 7058731515</span>
+              <span>+91 7058731515, +91 8788114603</span>
             </div>
 
             {/* Email */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
               <Mail size={14} style={{ color: '#94a3b8' }} />
-              <span>support@codecraft.in</span>
+              <span>jjadhavshreyas84@gmail.com</span>
             </div>
 
             {/* Address */}
@@ -135,7 +130,14 @@ const Footer = () => {
               <span style={{ fontSize: '0.85rem', fontWeight: '700', color: '#ffffff' }}>Address:</span>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
                 <MapPin size={14} style={{ color: '#94a3b8', flexShrink: 0, marginTop: '2px' }} />
-                <span>404 Tech Park, Sector 62, Noida, UP 201309</span>
+                <span>
+                  Building: Vinayak <br />
+                  Flt No: 1/13 Ground floor <br />
+                  Prabhat Road Lane No 10 <br />
+                  Swaroop Hotel Lane. <br />
+                  Near Sanjeevan Ayurved <br />
+                  Deccon Pune 411004
+                </span>
               </div>
             </div>
           </div>

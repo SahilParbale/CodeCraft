@@ -2,6 +2,7 @@ import React from 'react';
 import nagarsevakImg from '../assets/nagarsevak_dashboard.png';
 import voterImg from '../assets/voter_dashboard.png';
 import builderImg from '../assets/builder_dashboard.png';
+import gimbooksImg from '../assets/gimbooks_dashboard.png';
 import { ArrowRight } from 'lucide-react';
 
 const Projects = () => {
@@ -25,8 +26,8 @@ const Projects = () => {
           </h2>
         </div>
 
-        {/* 3-Column Projects Grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', width: '100%', marginBottom: '3rem' }}>
+        {/* Projects Grid */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', width: '100%', marginBottom: '3rem' }}>
           
           {/* Card 1: Nagarsevak Management */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
@@ -104,9 +105,51 @@ const Projects = () => {
                 <span className="project-tech-badge-light project-tech-badge-blue">Sales CRM</span>
               </div>
               
-              <h3 className="project-detail-title">Builder Management</h3>
+              <h3 className="project-detail-title" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                Builder Management
+                <span style={{
+                  fontSize: '0.65rem',
+                  fontWeight: '700',
+                  color: '#ffffff',
+                  background: '#f59e0b',
+                  padding: '0.2rem 0.5rem',
+                  borderRadius: '4px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>Coming Soon</span>
+              </h3>
               <p className="project-detail-text" style={{ flex: 1 }}>
                 An end-to-end unified platform for real estate developers to track construction sites, manage raw materials, and automate buyer invoicing.
+              </p>
+              
+              <div className="project-card-actions" style={{ marginTop: 'auto' }}>
+                <button className="btn-project-view">View Project</button>
+                <a href="#projects" className="project-detail-link" onClick={(e) => e.preventDefault()}>
+                  Learn More <ArrowRight size={14} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 4: Gimbooks */}
+          <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
+            <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden', background: '#e2e8f0' }}>
+              <img src={gimbooksImg} alt="Gimbooks" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <span className="project-tag-pill">Fintech</span>
+            </div>
+            
+            <div className="project-detail-content" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+              <span className="project-detail-label">Project Stack & Solutions</span>
+              
+              <div className="project-tech-badges-row">
+                <span className="project-tech-badge-light">SaaS</span>
+                <span className="project-tech-badge-light project-tech-badge-yellow">Invoicing</span>
+                <span className="project-tech-badge-light project-tech-badge-blue">Accounting</span>
+              </div>
+              
+              <h3 className="project-detail-title">Gimbooks</h3>
+              <p className="project-detail-text" style={{ flex: 1 }}>
+                A comprehensive financial platform for SMEs to create GST compliant invoices, manage inventory, generate e-way bills, and track expenses effortlessly.
               </p>
               
               <div className="project-card-actions" style={{ marginTop: 'auto' }}>
