@@ -57,8 +57,8 @@ const LocalMap = () => {
                 <Mail size={18} />
               </div>
               <div className="local-info-details">
-                <a href="mailto:support@go-soft.eu" className="local-info-value" style={{ fontWeight: '600', color: '#0f172a' }}>
-                  support@go-soft.eu
+                <a href="mailto:info@codecraft.net.in" className="local-info-value" style={{ fontWeight: '600', color: '#0f172a' }}>
+                  info@codecraft.net.in
                 </a>
                 <span className="local-info-value">General Support</span>
               </div>

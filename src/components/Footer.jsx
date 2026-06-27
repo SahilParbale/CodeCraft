@@ -122,7 +122,7 @@ const Footer = () => {
             {/* Email */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#94a3b8' }}>
               <Mail size={14} style={{ color: '#94a3b8' }} />
-              <span>jjadhavshreyas84@gmail.com</span>
+              <span>info@codecraft.net.in</span>
             </div>
 
             {/* Address */}

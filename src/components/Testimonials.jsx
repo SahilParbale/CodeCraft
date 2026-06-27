@@ -5,21 +5,21 @@ const Testimonials = () => {
     {
       stars: 5,
       text: '"CodeCraft has completely transformed our business operations. The team delivered a top-tier digital solution that exceeded all our expectations."',
-      name: 'Ralph Edwards',
+      name: 'Rahul Sharma',
       role: 'CEO, CodeCraft',
       avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces'
     },
     {
       stars: 5,
       text: '"Working with CodeCraft was a seamless experience. Their attention to detail and innovative approach helped us launch our platform ahead of schedule."',
-      name: 'Jenna Smith',
+      name: 'Priya Patel',
       role: 'CTO, Tech Innovations',
       avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces'
     },
     {
       stars: 5,
       text: '"The level of expertise and professionalism at CodeCraft is unmatched. They truly understand what it takes to build a scalable and robust product."',
-      name: 'Marcus Lee',
+      name: 'Amit Desai',
       role: 'CFO, FinTech Solutions',
       avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces'
     }

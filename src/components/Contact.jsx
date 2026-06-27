@@ -213,7 +213,7 @@ const Contact = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.1rem' }}>
               <span style={{ fontSize: '0.9rem', fontWeight: '700', color: '#0f172a', fontFamily: "'Inter', sans-serif" }}>Email</span>
-              <span style={{ fontSize: '0.85rem', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>jjadhavshreyas84@gmail.com</span>
+              <span style={{ fontSize: '0.85rem', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>info@codecraft.net.in</span>
             </div>
           </div>
 

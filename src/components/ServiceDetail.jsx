@@ -1,66 +1,20 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Headphones, ClipboardList, Code2, Server, PhoneCall, Globe, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Code2, Globe, Smartphone, Layout, Cloud, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const serviceData = {
-  'it-support': {
-    title: 'IT Support',
-    icon: <Headphones size={32} />,
-    description: "Comprehensive support for servers, networks, desktops, IP phone systems, and mobile devices.",
-    workflow: [
-      {
-        title: 'Initial Assessment',
-        desc: 'We analyze your current IT infrastructure and identify key areas requiring immediate support or long-term improvement.'
-      },
-      {
-        title: 'Custom Support Plan',
-        desc: 'Based on your needs, we tailor a dedicated Service Level Agreement (SLA) to guarantee response times and continuous monitoring.'
-      },
-      {
-        title: 'Active Monitoring & Maintenance',
-        desc: 'Our team proactively monitors your systems 24/7 to prevent downtime, deploying patches and updates behind the scenes.'
-      },
-      {
-        title: 'Rapid Resolution',
-        desc: 'When issues arise, our helpdesk provides instant remote support or on-site visits to resolve them quickly and efficiently.'
-      }
-    ]
-  },
-  'planning-consulting': {
-    title: 'Planning & Consulting',
-    icon: <ClipboardList size={32} />,
-    description: "Strategic guidance to align your IT capabilities with your business goals.",
-    workflow: [
-      {
-        title: 'Discovery & Audit',
-        desc: 'We conduct a deep dive into your existing processes, software, and hardware to understand your business objectives.'
-      },
-      {
-        title: 'Gap Analysis',
-        desc: 'We identify technical bottlenecks and operational gaps holding back your productivity or scaling potential.'
-      },
-      {
-        title: 'Strategic Roadmap Design',
-        desc: 'We architect a step-by-step digital transformation roadmap, prioritizing cost-effective and high-impact IT investments.'
-      },
-      {
-        title: 'Implementation Oversight',
-        desc: 'Our consultants work alongside your team to ensure the new strategies are executed seamlessly and correctly.'
-      }
-    ]
-  },
-  'software-development': {
-    title: 'Software Development',
+  'custom-software-development': {
+    title: 'Custom Software Development',
     icon: <Code2 size={32} />,
-    description: "Customized software solutions tailored specifically for your company's workflows.",
+    description: "Building tailored applications—like CRM systems or inventory platforms—from scratch to meet specific business requirements and automate workflows.",
     workflow: [
       {
         title: 'Requirements Gathering',
         desc: 'We start by deeply understanding your operational needs, target audience, and the problem the software must solve.'
       },
       {
-        title: 'UI/UX Design & Prototyping',
-        desc: 'Our design team creates intuitive wireframes and interactive prototypes so you can visualize the product before coding begins.'
+        title: 'System Architecture Design',
+        desc: 'Our architects map out the most efficient, scalable, and secure structural foundation for your custom application.'
       },
       {
         title: 'Agile Development',
@@ -72,72 +26,118 @@ const serviceData = {
       }
     ]
   },
-  'it-infrastructure': {
-    title: 'IT Infrastructure',
-    icon: <Server size={32} />,
-    description: "Robust, scalable, and secure infrastructure planning and management.",
-    workflow: [
-      {
-        title: 'Infrastructure Audit',
-        desc: 'We evaluate your current network architecture, server capacity, and security posture to establish a baseline.'
-      },
-      {
-        title: 'Architecture Design',
-        desc: 'We design a scalable network and server architecture (cloud, on-premise, or hybrid) tailored to your specific load requirements.'
-      },
-      {
-        title: 'Hardware & Software Provisioning',
-        desc: 'We procure, configure, and install the necessary enterprise-grade routers, switches, firewalls, and servers.'
-      },
-      {
-        title: 'Ongoing Management',
-        desc: 'We continuously optimize performance, manage backups, and ensure your infrastructure remains resilient against cyber threats.'
-      }
-    ]
-  },
-  'communication-solutions': {
-    title: 'Communication Solutions',
-    icon: <PhoneCall size={32} />,
-    description: "Unified communication strategies including VoIP telephony and secure messaging.",
-    workflow: [
-      {
-        title: 'Needs Assessment',
-        desc: 'We assess your team\'s communication needs, analyzing call volumes, remote work requirements, and current telephony costs.'
-      },
-      {
-        title: 'System Selection',
-        desc: 'We recommend the best Unified Communications as a Service (UCaaS) platforms, such as Swyx or CentralLink, for your exact needs.'
-      },
-      {
-        title: 'Seamless Migration',
-        desc: 'We port your existing numbers and configure the new VoIP systems with zero downtime or disruption to your business.'
-      },
-      {
-        title: 'Training & Support',
-        desc: 'We train your staff on using the new communication tools effectively and provide ongoing technical support.'
-      }
-    ]
-  },
-  'web-hosting': {
-    title: 'Web Hosting',
+  'web-application-development': {
+    title: 'Web Application Development',
     icon: <Globe size={32} />,
-    description: "High-performance, secure servers with SSL certificates and domain management.",
+    description: "Creating secure, cross-platform, browser-based applications. This includes creating robust back-ends and interactive front-ends to deliver seamless online services.",
     workflow: [
       {
-        title: 'Resource Planning',
-        desc: 'We analyze your website traffic, storage needs, and application requirements to select the perfect hosting environment.'
+        title: 'Project Scoping & Strategy',
+        desc: 'We align on the business logic, user roles, and data flow to build a clear roadmap for the web application.'
       },
       {
-        title: 'Server Configuration',
-        desc: 'We provision and configure high-performance modern servers, optimizing them for speed, caching, and security.'
+        title: 'UI/UX Design',
+        desc: 'Our design team creates intuitive wireframes and interactive prototypes so you can visualize the product before coding begins.'
       },
       {
-        title: 'Migration & SSL Setup',
-        desc: 'We securely migrate your existing data, configure your domains, and install robust SSL certificates to protect your users.'
+        title: 'Full-Stack Development',
+        desc: 'We develop a responsive front-end coupled with a secure, high-performance back-end architecture.'
       },
       {
-        title: '24/7 Uptime Monitoring',
-        desc: 'Our automated systems monitor your server health around the clock, ensuring 99.9% uptime and rapid response to any anomalies.'
+        title: 'Testing & Launch',
+        desc: 'Following extensive cross-browser and security testing, we launch your application with zero downtime.'
+      }
+    ]
+  },
+  'mobile-app-development': {
+    title: 'Mobile App Development',
+    icon: <Smartphone size={32} />,
+    description: "Designing and programming native or cross-platform mobile apps for iOS and Android devices to reach consumers on the go.",
+    workflow: [
+      {
+        title: 'Concept & Feasibility',
+        desc: 'We refine your app idea, select the best tech stack (native vs cross-platform), and outline the core feature set.'
+      },
+      {
+        title: 'Mobile UI/UX Design',
+        desc: 'We design touch-friendly, intuitive interfaces tailored to both iOS and Android design guidelines.'
+      },
+      {
+        title: 'App Development',
+        desc: 'Our mobile developers write clean, efficient code to bring your application to life with smooth animations and transitions.'
+      },
+      {
+        title: 'App Store Deployment',
+        desc: 'We handle the entire submission process for the Apple App Store and Google Play Store to ensure smooth approval.'
+      }
+    ]
+  },
+  'ui-ux-design': {
+    title: 'UI/UX Design',
+    icon: <Layout size={32} />,
+    description: "Crafting intuitive user interfaces (UI) and user experiences (UX). This involves user research, wireframing, and visual design to ensure the software is user-friendly and visually appealing.",
+    workflow: [
+      {
+        title: 'User Research & Analysis',
+        desc: 'We study your target demographic to understand their behaviors, pain points, and expectations.'
+      },
+      {
+        title: 'Wireframing & Prototyping',
+        desc: 'We create low-fidelity wireframes to map out user journeys, followed by interactive prototypes to test usability.'
+      },
+      {
+        title: 'Visual Design',
+        desc: 'We apply typography, color palettes, and brand guidelines to create a stunning, cohesive interface.'
+      },
+      {
+        title: 'Usability Testing',
+        desc: 'We validate the designs with real users to ensure the interface is frictionless, intuitive, and conversion-optimized.'
+      }
+    ]
+  },
+  'cloud-devops': {
+    title: 'Cloud & DevOps Services',
+    icon: <Cloud size={32} />,
+    description: "Assisting with cloud migration (AWS, Azure, GCP) and automating deployment and infrastructure. This service ensures systems scale dynamically, securely, and handle high traffic seamlessly.",
+    workflow: [
+      {
+        title: 'Infrastructure Assessment',
+        desc: 'We evaluate your current setup to determine the most cost-effective and scalable cloud migration strategy.'
+      },
+      {
+        title: 'Architecture & Provisioning',
+        desc: 'We design a scalable cloud architecture and automatically provision resources using Infrastructure as Code (IaC).'
+      },
+      {
+        title: 'CI/CD Pipeline Setup',
+        desc: 'We build robust Continuous Integration and Continuous Deployment pipelines to automate testing and releases.'
+      },
+      {
+        title: 'Monitoring & Optimization',
+        desc: 'We implement 24/7 monitoring and continuously optimize your cloud resources for performance and cost efficiency.'
+      }
+    ]
+  },
+  'qa-testing': {
+    title: 'Software Testing & QA',
+    icon: <ShieldCheck size={32} />,
+    description: "Conducting rigorous functional, performance, and security testing to identify bugs and ensure the software is stable and reliable before, during, and after deployment.",
+    workflow: [
+      {
+        title: 'Test Planning',
+        desc: 'We define the testing scope, strategies, and success criteria based on your software requirements.'
+      },
+      {
+        title: 'Test Case Development',
+        desc: 'We create detailed manual and automated test cases covering functional, regression, and edge-case scenarios.'
+      },
+      {
+        title: 'Test Execution',
+        desc: 'We execute the test cases, meticulously logging any defects or bottlenecks in performance.'
+      },
+      {
+        title: 'Reporting & Sign-off',
+        desc: 'We provide comprehensive quality reports and work with developers to ensure all critical issues are resolved before launch.'
       }
     ]
   }
