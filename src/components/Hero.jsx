@@ -40,7 +40,7 @@ const Hero = () => {
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '3rem' }}>
           
           {/* Left Content */}
-          <div style={{ flex: '1 1 500px' }} className="animate-fade-right">
+          <div style={{ flex: '1 1 min(100%, 500px)' }} className="animate-fade-right">
             <div style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -119,7 +119,7 @@ const Hero = () => {
           {/* Right Content - Mockup Area */}
           {/* Right Content - Mockup Area */}
           <div 
-            style={{ flex: '1 1 500px', position: 'relative', height: '500px', cursor: 'pointer' }} 
+            style={{ flex: '1 1 min(100%, 500px)', position: 'relative', minHeight: '500px', cursor: 'pointer' }} 
             className="animate-fade-up"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}

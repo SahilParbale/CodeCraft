@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', marginBottom: '2.5rem', alignItems: 'center' }}>
           
           {/* Left Side */}
-          <div style={{ flex: '1 1 400px' }} className="animate-fade-right">
+          <div style={{ flex: '1 1 min(100%, 400px)' }} className="animate-fade-right">
             <span className="section-tag" style={{ color: '#ff5a00', background: 'rgba(255, 90, 0, 0.1)', border: '1px solid rgba(255, 90, 0, 0.2)' }}>WHY CHOOSE US</span>
             <h2 className="section-title" style={{ color: 'white', fontSize: '3rem', marginTop: '0.5rem' }}>
               Engineering You Can Depend On
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
           </div>
           
           {/* Right Side (Grid) */}
-          <div style={{ flex: '1 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2.5rem' }} className="animate-fade-up">
+          <div style={{ flex: '1 1 min(100%, 500px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2.5rem' }} className="animate-fade-up">
             {features.map((feature, idx) => (
               <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div style={{
@@ -92,7 +92,7 @@ const WhyChooseUs = () => {
           justifyContent: 'space-between',
           gap: '2rem'
         }}>
-          <div style={{ flex: '1 1 400px' }}>
+          <div style={{ flex: '1 1 min(100%, 400px)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
               <h3 style={{ color: 'white', fontSize: '1.8rem', fontWeight: '800', margin: 0 }}>Ready to transform your business?</h3>
               <span style={{ 
