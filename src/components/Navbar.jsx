@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState(null);
+  const [btnHovered, setBtnHovered] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+  
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
+    // Mount entry animation trigger
+    setIsMounted(true);
+
     const handleScroll = () => {
-      // Set active section based on subpages
+      setScrolled(window.scrollY > 20);
+      
       if (location.pathname.startsWith('/service/')) {
         setActiveSection('services');
         return;
@@ -20,13 +30,11 @@ const Navbar = () => {
         return;
       }
       
-      // Only track scroll on home page
       if (location.pathname !== '/') return;
       
-      const sections = ['home', 'products', 'services', 'projects', 'contact'];
+      const sections = ['home', 'products', 'services', 'about', 'contact'];
       let currentSection = 'home';
       
-      // Use 1/3 of the window height as the scroll detection line
       const scrollPosition = window.scrollY + window.innerHeight / 3;
       
       for (const section of sections) {
@@ -36,7 +44,6 @@ const Navbar = () => {
         }
       }
       
-      // Handle the bottom of the page
       if (window.innerHeight + Math.round(window.scrollY) >= document.documentElement.scrollHeight - 50) {
         currentSection = 'contact';
       }
@@ -45,7 +52,6 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    // Initial check
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
@@ -57,7 +63,6 @@ const Navbar = () => {
     
     if (location.pathname !== '/') {
       navigate('/');
-      // Wait for page transition then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -70,7 +75,6 @@ const Navbar = () => {
 
     const element = document.getElementById(sectionId);
     if (element) {
-      // Offset by navbar height (80px)
       const offsetTop = element.offsetTop - 80;
       window.scrollTo({
         top: offsetTop,
@@ -83,6 +87,7 @@ const Navbar = () => {
     { id: 'home', label: 'Home' },
     { id: 'products', label: 'Products' },
     { id: 'services', label: 'Services' },
+    { id: 'about', label: 'About Us' },
     { id: 'contact', label: 'Contact Us' }
   ];
 
@@ -91,121 +96,173 @@ const Navbar = () => {
       position: 'sticky',
       top: 0,
       width: '100%',
-      height: '80px',
-      background: '#ffffff',
-      borderBottom: '1px solid #e2e8f0',
+      height: '90px',
+      background: scrolled ? 'rgba(255, 255, 255, 0.92)' : '#ffffff',
+      backdropFilter: scrolled ? 'blur(12px)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(15, 23, 42, 0.06)' : '1px solid transparent',
+      boxShadow: scrolled ? '0 10px 30px rgba(0,0,0,0.02)' : 'none',
       zIndex: 100,
       display: 'flex',
-      alignItems: 'center'
+      alignItems: 'center',
+      opacity: isMounted ? 1 : 0,
+      transform: isMounted ? 'translateY(0)' : 'translateY(-20px)',
+      transition: 'background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease'
     }}>
-      <div className="nav-container" style={{
+      <div className="container" style={{
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'between',
-        width: '100%',
-        maxWidth: '1200px',
-        margin: '0 auto',
-        padding: '0 1.5rem'
+        justifyContent: 'space-between',
       }}>
         
-        {/* Logo (CodeCraft Solutions) */}
+        {/* Animated Brand Logo */}
         <div 
           onClick={() => scrollToSection('home')}
-          style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', textDecoration: 'none', cursor: 'pointer' }}>
-          <div style={{
-            background: 'linear-gradient(135deg, #ea580c 0%, #f97316 100%)',
-            color: '#ffffff',
-            borderRadius: '50%',
-            width: '36px',
-            height: '36px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontWeight: '800',
-            fontSize: '1rem',
-            fontFamily: "'Inter', sans-serif",
-            letterSpacing: '-0.05em'
-          }}>CC</div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', lineHeight: '1.05' }}>
-            <span style={{ fontSize: '0.85rem', fontWeight: '800', color: '#1e293b', letterSpacing: '0.03em', fontFamily: "'Inter', sans-serif" }}>CODECRAFT</span>
-            <span style={{ fontSize: '0.85rem', fontWeight: '800', color: '#ea580c', letterSpacing: '0.03em', fontFamily: "'Inter', sans-serif" }}>SOLUTIONS</span>
-          </div>
+          style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            cursor: 'pointer',
+            transition: 'transform 0.3s ease'
+          }}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
+          onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+        >
+          <Logo scale={0.7} />
         </div>
 
-        {/* Navigation Items (Desktop) */}
-        <div className="nav-links">
-          {navLinks.map((link) => (
-            <span 
-              key={link.id}
-              onClick={() => scrollToSection(link.id)}
-              className={`nav-item ${activeSection === link.id ? 'active' : ''}`}
-              style={{ 
-                fontSize: '0.9rem', 
-                cursor: 'pointer', 
-                fontFamily: "'Inter', sans-serif",
-                position: 'relative',
-                transition: 'all 0.2s ease',
-                paddingBottom: '4px'
-              }}
-            >
-              {link.label}
-            </span>
-          ))}
+        {/* Desktop Links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }} className="desktop-only">
+          <nav style={{ display: 'flex', gap: '2.2rem' }}>
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.id;
+              const isHovered = hoveredLink === link.id;
+              
+              return (
+                <span 
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  onMouseEnter={() => setHoveredLink(link.id)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                  style={{ 
+                    fontSize: '0.92rem', 
+                    fontWeight: isActive ? '700' : '500',
+                    color: isActive ? 'var(--accent-primary)' : isHovered ? 'var(--accent-primary)' : 'var(--text-primary)',
+                    cursor: 'pointer', 
+                    fontFamily: "'Inter', sans-serif",
+                    position: 'relative',
+                    transition: 'color 0.25s ease',
+                    padding: '8px 2px',
+                    display: 'inline-block'
+                  }}
+                >
+                  {link.label}
+                  {/* Sliding Underline Animation */}
+                  <span style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    width: isActive || isHovered ? '100%' : '0%',
+                    height: '2px',
+                    background: 'var(--accent-primary)',
+                    borderRadius: '4px',
+                    transition: 'width 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }} />
+                </span>
+              );
+            })}
+          </nav>
           
-          <button className="btn-get-started"
-          onClick={() => navigate('/get-started')}
+          <button 
+            className="btn btn-primary"
+            onClick={() => scrollToSection('contact')}
+            onMouseEnter={() => setBtnHovered(true)}
+            onMouseLeave={() => setBtnHovered(false)}
+            style={{
+              borderRadius: '999px',
+              padding: '0.7rem 1.8rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              boxShadow: btnHovered ? '0 8px 20px rgba(255, 90, 0, 0.25)' : 'none',
+              transform: btnHovered ? 'translateY(-1px)' : 'none',
+              transition: 'all 0.25s ease'
+            }}
           >
-            Get Started
+            Let's Talk 
+            <ArrowRight size={16} style={{ 
+              transform: btnHovered ? 'translateX(3px)' : 'translateX(0)', 
+              transition: 'transform 0.25s ease' 
+            }} />
           </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle */}
         <button 
-          className="mobile-toggle"
+          className="mobile-only"
+          style={{ 
+            background: 'none', 
+            border: 'none', 
+            color: 'var(--text-primary)', 
+            cursor: 'pointer',
+            padding: '8px',
+            borderRadius: '50%',
+            transition: 'background-color 0.2s'
+          }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.02)'}
+          onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
 
-        {/* Mobile Menu Drawer */}
-        <div className={`mobile-menu-drawer ${isMobileMenuOpen ? 'open' : ''}`}>
-          <div className="mobile-nav-links">
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div style={{
+            position: 'absolute',
+            top: scrolled ? '80px' : '100px',
+            left: 0,
+            width: '100%',
+            background: '#ffffff',
+            borderBottom: '1px solid var(--border-color)',
+            padding: '1.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.25rem',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.05)',
+            animation: 'slideDownMenu 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+          }} className="mobile-only">
             {navLinks.map((link) => (
               <span 
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="mobile-nav-link"
                 style={{ 
-                  color: activeSection === link.id ? '#ea580c' : '#475569'
+                  fontSize: '1.05rem',
+                  fontWeight: activeSection === link.id ? '700' : '500',
+                  color: activeSection === link.id ? 'var(--accent-primary)' : 'var(--text-primary)',
+                  padding: '8px 0',
+                  borderBottom: '1px solid #f8fafc'
                 }}
               >
                 {link.label}
               </span>
             ))}
+            <button 
+              className="btn btn-primary"
+              onClick={() => scrollToSection('contact')}
+              style={{ width: '100%', borderRadius: '999px', padding: '0.8rem' }}
+            >
+              Let's Talk <ArrowRight size={18} />
+            </button>
           </div>
-          <button 
-            style={{
-              background: '#111827',
-              color: '#ffffff',
-              border: 'none',
-              borderRadius: '9999px',
-              padding: '1rem',
-              fontSize: '1rem',
-              fontWeight: '600',
-              cursor: 'pointer',
-              fontFamily: "'Inter', sans-serif",
-              width: '100%'
-            }}
-            onClick={() => {
-              navigate('/get-started');
-              setIsMobileMenuOpen(false);
-            }}
-          >
-            Get Started
-          </button>
-        </div>
-
+        )}
       </div>
+      
+      {/* Menu animation keyframes injected */}
+      <style>{`
+        @keyframes slideDownMenu {
+          from { opacity: 0; transform: translateY(-10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </header>
   );
 };

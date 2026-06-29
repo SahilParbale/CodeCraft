@@ -1,70 +1,96 @@
 import React from 'react';
+import { Star } from 'lucide-react';
 
 const Testimonials = () => {
   const reviews = [
     {
       stars: 5,
-      text: '"CodeCraft has completely transformed our business operations. The team delivered a top-tier digital solution that exceeded all our expectations."',
-      name: 'Rahul Sharma',
-      role: 'CEO, CodeCraft',
-      avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=faces'
-    },
-    {
-      stars: 5,
-      text: '"Working with CodeCraft was a seamless experience. Their attention to detail and innovative approach helped us launch our platform ahead of schedule."',
-      name: 'Priya Patel',
-      role: 'CTO, Tech Innovations',
+      text: '"CodeCraft Technologies delivered an outstanding solution that transformed our workflow. Their team is professional, responsive and truly dedicated."',
+      name: 'Ismail Shaikh',
+      role: 'CEO, Nagar Setu',
       avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=faces'
     },
     {
       stars: 5,
-      text: '"The level of expertise and professionalism at CodeCraft is unmatched. They truly understand what it takes to build a scalable and robust product."',
+      text: '"Working with CodeCraft was a seamless experience. Their expertise and attention to detail helped us achieve our goals faster than expected."',
+      name: 'Pooja Patil',
+      role: 'CEO, Patil Enterprises',
+      avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&crop=faces'
+    },
+    {
+      stars: 5,
+      text: '"The team delivered beyond our expectations with a secure and scalable platform. Highly recommended for any digital transformation."',
       name: 'Amit Desai',
-      role: 'CFO, FinTech Solutions',
+      role: 'CTO, Desai Constructions',
       avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&fit=crop&crop=faces'
     }
   ];
 
   return (
-    <section id="testimonials" className="section testimonials-section" style={{ background: '#ffffff', paddingTop: '3rem' }}>
-      {/* Background Grid Lines */}
-      <div className="bg-grid-lines">
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-      </div>
-
-      <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+    <section id="testimonials" className="section" style={{ background: '#fcfaf8', padding: '4.5rem 0' }}>
+      <div className="container">
         
         {/* Header */}
-        <div className="section-header" style={{ marginBottom: '3.5rem' }}>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontWeight: '600', fontSize: '2.8rem' }}>
-            Our Happy Customers
-          </h2>
+        <div className="section-header" style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
+          <span className="section-tag" style={{ background: '#fff7ed', border: '1px solid rgba(255,90,0,0.15)' }}>TESTIMONIALS</span>
+          <h2 className="section-title">Our Happy Customers</h2>
         </div>
 
         {/* 3-Column Reviews Grid */}
-        <div className="testimonials-grid" style={{ width: '100%' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '2rem'
+        }}>
           {reviews.map((rev, index) => (
-            <div key={index} className="testimonial-card-light">
+            <div 
+              key={index} 
+              className="glass-card animate-fade-up"
+              style={{
+                background: 'white',
+                padding: '2.5rem 2rem',
+                borderRadius: '16px',
+                border: '1.5px solid #f1f5f9',
+                display: 'flex',
+                flexDirection: 'column',
+                animationDelay: `${index * 0.1}s`,
+                boxShadow: '0 4px 20px rgba(0,0,0,0.015)'
+              }}
+            >
+              
               {/* Stars */}
-              <div className="testimonial-stars">
+              <div style={{ display: 'flex', gap: '4px', marginBottom: '1.5rem' }}>
                 {Array.from({ length: rev.stars }).map((_, i) => (
-                  <span key={i} style={{ fontSize: '1.25rem' }}>★</span>
+                  <Star key={i} size={16} fill="#fbbf24" color="#fbbf24" />
                 ))}
               </div>
               
               {/* Quote Text */}
-              <p className="testimonial-text">{rev.text}</p>
+              <p style={{
+                fontSize: '1rem',
+                color: 'var(--text-secondary)',
+                lineHeight: '1.65',
+                flex: 1,
+                marginBottom: '2rem'
+              }}>
+                {rev.text}
+              </p>
               
               {/* Profile Details */}
-              <div className="testimonial-author">
-                <img src={rev.avatarUrl} alt={rev.name} className="author-avatar" />
-                <div className="author-info">
-                  <span className="author-name">{rev.name}</span>
-                  <span className="author-role">{rev.role}</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: 'auto' }}>
+                <img 
+                  src={rev.avatarUrl} 
+                  alt={rev.name} 
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: '50%',
+                    objectFit: 'cover'
+                  }}
+                />
+                <div>
+                  <div style={{ fontWeight: '700', fontSize: '0.95rem', color: '#0f172a' }}>{rev.name}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{rev.role}</div>
                 </div>
               </div>
             </div>

@@ -194,7 +194,7 @@ const GetStartedForm = () => {
   ];
 
   return (
-    <div style={{ background: '#f8fafc', minHeight: 'calc(100vh - 80px)', padding: '5rem 1rem', display: 'flex', justifyContent: 'center' }}>
+    <div style={{ background: '#f8fafc', minHeight: 'calc(100vh - 80px)', padding: '3rem 1rem', display: 'flex', justifyContent: 'center' }}>
 
       <div style={{
         background: '#ffffff',
@@ -202,11 +202,11 @@ const GetStartedForm = () => {
         maxWidth: '700px',
         borderRadius: '24px',
         boxShadow: '0 10px 40px rgba(0, 0, 0, 0.04)',
-        padding: '3.5rem',
+        padding: '2.5rem 2.25rem',
         border: '1px solid #e2e8f0'
       }}>
 
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           {new URLSearchParams(location.search).get('product') && (
             <div style={{
               display: 'inline-block',
@@ -216,7 +216,7 @@ const GetStartedForm = () => {
               fontWeight: '700',
               padding: '0.35rem 1rem',
               borderRadius: '9999px',
-              marginBottom: '1rem',
+              marginBottom: '0.75rem',
               border: '1px solid rgba(234, 88, 12, 0.15)',
               fontFamily: "'Inter', sans-serif"
             }}>
@@ -234,7 +234,7 @@ const GetStartedForm = () => {
         </div>
 
         {isSubmitted ? (
-          <div style={{ textAlign: 'center', padding: '3rem 0', animation: 'fadeIn 0.5s ease' }}>
+          <div style={{ textAlign: 'center', padding: '2rem 0', animation: 'fadeIn 0.5s ease' }}>
             <div style={{ width: '64px', height: '64px', background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontSize: '2rem' }}>
               ✓
             </div>
@@ -242,7 +242,7 @@ const GetStartedForm = () => {
             <p style={{ color: '#64748b', fontFamily: "'Inter', sans-serif" }}>Thank you for reaching out. We will contact you shortly.</p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+          <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
 
             {/* Name & Email Row */}
             <div className="grid-two-col">

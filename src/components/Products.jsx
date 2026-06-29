@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, Lock, Upload, FileText, Check, Phone, 
   Monitor, Terminal, Activity, ArrowUpRight, Cpu, HardDrive, 
-  Database, Server, RefreshCw, LogOut, CheckCircle2, Play, Users
+  Database, Server, RefreshCw, LogOut, CheckCircle2, Play, Users, Briefcase
 } from 'lucide-react';
 import nagarsevakImg from '../assets/nagarsevak_dashboard.png';
 import voterImg from '../assets/voter_dashboard.png';
@@ -14,326 +14,179 @@ const Products = () => {
   const navigate = useNavigate();
   const [activeSandbox, setActiveSandbox] = useState(null);
 
-  // Close sandbox on Escape key
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        setActiveSandbox(null);
-      }
+      if (e.key === 'Escape') setActiveSandbox(null);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Prevent scroll when sandbox is open
   useEffect(() => {
-    if (activeSandbox) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
+    document.body.style.overflow = activeSandbox ? 'hidden' : 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
   }, [activeSandbox]);
 
   const productsData = [
     {
       id: 'nagarsevak',
-      category: 'Local Governance',
       name: 'Nagarsevak Management',
-      version: 'v3.0',
-      tagline: 'Complete digital administration for local representatives.',
-      description: 'A comprehensive digital system for managing ward operations, tracking complaints, handling official correspondence, and monitoring budget utilization with integrated WhatsApp bot features.',
+      description: 'Complete Nagarsevak management system with workflow automation, tracking & reporting.',
       features: [
-        'Voter list & demographic analysis',
-        'Complaint registration & tracking',
-        'Letter & document generation',
-        'Budget & development works tracking'
+        'Citizen & complaint management',
+        'Task & staff management',
+        'Reports & analytics dashboard',
+        'Role-based access control'
       ],
       image: nagarsevakImg,
-      icon: <Users size={22} />,
-      gradient: 'linear-gradient(135deg, #ea580c 0%, #ffedd5 100%)',
-      accentColor: '#ea580c'
+      icon: <Users size={20} />,
+      accentColor: '#ff5a00',
+      bgLight: '#fff7ed'
     },
     {
       id: 'voterpro',
-      category: 'Political Tech',
       name: 'Voter Management',
-      version: 'v2.1',
-      tagline: 'Advanced voter analytics and campaign organization.',
-      description: 'Organize your constituency with deep demographic insights. Filter voters by booth, predict voting patterns, manage field workers, and run targeted outreach campaigns seamlessly.',
+      description: 'Smart voter data management with verification, tracking & analytics.',
       features: [
-        'Interactive booth-level voter mapping',
-        'Karyakarta (worker) assignment tracking',
-        'Real-time voter sentiment analysis',
-        'Bulk SMS & WhatsApp broadcasting'
+        'Voter data management',
+        'Booth & area mapping',
+        'Verification & deduplication',
+        'Advanced reporting system'
       ],
       image: voterImg,
-      icon: <CheckCircle2 size={22} />,
-      gradient: 'linear-gradient(135deg, #ea580c 0%, #ffedd5 100%)',
-      accentColor: '#ea580c'
+      icon: <Users size={20} />,
+      accentColor: '#ff5a00',
+      bgLight: '#fff7ed'
     },
     {
       id: 'buildermanager',
-      category: 'Real Estate',
       name: 'Builder Management',
-      version: 'Coming Soon',
-      tagline: 'End-to-end construction project & client management.',
-      description: 'A unified platform for real estate developers to track construction progress, manage raw material inventory, handle buyer payments, and automate sales pipelines.',
+      description: 'Project & builder management system with document tracking, approvals & compliance.',
       features: [
-        'Site progress & inventory tracking',
-        'Buyer payment & installment reminders',
-        'Lead generation & sales CRM',
-        'Automated receipt & invoice generation'
+        'Project & builder registration',
+        'Document & approval tracking',
+        'Compliance & audit logs',
+        'Real-time status updates'
       ],
       image: builderImg,
-      icon: <Monitor size={22} />,
-      gradient: 'linear-gradient(135deg, #ea580c 0%, #ffedd5 100%)',
-      accentColor: '#ea580c'
+      icon: <Briefcase size={20} />,
+      accentColor: '#ff5a00',
+      bgLight: '#fff7ed',
+      comingSoon: true
     },
     {
       id: 'gimbooks',
-      category: 'Fintech',
-      name: 'Gimbooks',
-      version: 'v4.2',
-      tagline: 'Cloud-based accounting, invoicing & GST software.',
-      description: 'A comprehensive financial platform for SMEs to create GST compliant invoices, manage inventory, generate e-way bills, and track expenses seamlessly.',
+      name: 'GimBooks (Accounting)',
+      description: 'Smart accounting & bookkeeping solution for businesses of every size.',
       features: [
-        'GST compliant invoice generation',
-        'Inventory management & tracking',
-        'E-way bill creation',
-        'Expense & ledger accounting'
+        'Income & expense tracking',
+        'Invoice & billing management',
+        'Financial reports',
+        'Multi-user access'
       ],
       image: gimbooksImg,
-      icon: <Activity size={22} />,
-      gradient: 'linear-gradient(135deg, #ea580c 0%, #ffedd5 100%)',
-      accentColor: '#ea580c'
+      icon: <Activity size={20} />,
+      accentColor: '#ff5a00',
+      bgLight: '#fff7ed'
     }
   ];
 
   return (
-    <section id="products" className="section products-section" style={{ background: '#ffffff', paddingBottom: '3.5rem' }}>
-      {/* Background Grid Lines */}
-      <div className="bg-grid-lines">
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-        <div className="grid-line"></div>
-      </div>
-
-      <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+    <section id="products" className="section bg-secondary" style={{ background: 'var(--bg-secondary)', padding: '4.5rem 0' }}>
+      <div className="container">
         
-        {/* Section Header */}
-        <div className="section-header" style={{ marginBottom: '4rem', textAlign: 'center' }}>
-          <span className="section-tag" style={{ color: '#ea580c', background: 'rgba(234, 88, 12, 0.06)', border: '1px solid rgba(234, 88, 12, 0.1)' }}>
-            Proprietary Software
-          </span>
-          <h2 className="section-title" style={{ fontFamily: "'Playfair Display', serif", fontWeight: '600', fontSize: '2.8rem', marginTop: '1rem' }}>
-            Our Projects
-          </h2>
-          <p className="section-subtitle" style={{ maxWidth: '650px', margin: '0 auto', fontSize: '1.05rem', color: '#64748b' }}>
-            Explore our ready-to-deploy platforms designed to streamline operations, secure client relationships, and monitor critical infrastructure.
+        {/* Header */}
+        <div className="section-header">
+          <span className="section-tag">OUR PRODUCTS</span>
+          <h2 className="section-title">Powerful Products. Real Impact.</h2>
+          <p className="section-subtitle">
+            Explore our ready-to-deploy platforms designed to simplify operations, boost efficiency and deliver measurable results.
           </p>
         </div>
 
-        {/* 3-Column Products Grid */}
-        <div className="products-grid">
-          {productsData.map((prod) => (
-            <div 
-              key={prod.id} 
-              className="product-card" 
-              style={{
-                background: '#ffffff',
-                border: '1px solid #e2e8f0',
-                borderRadius: '24px',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.015)'
-              }}
-            >
-              {/* Product Card Top: Image Container with overlay */}
-              <div style={{ position: 'relative', width: '100%', height: '190px', overflow: 'hidden', background: '#f8fafc' }}>
-                <img 
-                  src={prod.image} 
-                  alt={prod.name} 
-                  className="product-card-img"
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover', 
-                    transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)'
-                  }} 
-                />
-                
-                {/* Visual Category Label */}
-                <span style={{
-                  position: 'absolute',
-                  top: '1rem',
-                  left: '1rem',
-                  background: '#ffffff',
-                  color: '#0f172a',
-                  fontSize: '0.75rem',
-                  fontWeight: '700',
-                  padding: '0.35rem 0.9rem',
-                  borderRadius: '9999px',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
-                  fontFamily: "'Inter', sans-serif"
-                }}>
-                  {prod.category}
-                </span>
-
-                {/* Accent icon overlay */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: '1rem',
-                  right: '1rem',
-                  background: prod.accentColor,
-                  color: '#ffffff',
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)'
+        {/* 4-Column Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.5rem',
+          marginTop: '2rem'
+        }}>
+          {productsData.map((prod, idx) => (
+            <div key={prod.id} className="glass-card animate-fade-up" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', animationDelay: `${idx * 0.1}s`, background: 'white' }}>
+              
+              {/* Image Thumbnail */}
+              <div style={{ width: '100%', height: '140px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.25rem', border: '1px solid var(--border-color)' }}>
+                <img src={prod.image} alt={prod.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              
+              {/* Title Area */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                <div style={{ 
+                  background: prod.accentColor, 
+                  color: 'white', 
+                  width: '36px', height: '36px', 
+                  borderRadius: '8px', 
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 
                 }}>
                   {prod.icon}
                 </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '800', lineHeight: '1.2', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                  {prod.name}
+                  {prod.comingSoon && (
+                    <span style={{
+                      fontSize: '0.65rem',
+                      fontWeight: '800',
+                      padding: '0.2rem 0.5rem',
+                      background: '#fff7ed',
+                      color: 'var(--accent-primary)',
+                      border: '1px solid rgba(255, 90, 0, 0.2)',
+                      borderRadius: '999px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em'
+                    }}>
+                      Coming Soon
+                    </span>
+                  )}
+                </h3>
               </div>
-
-              {/* Product Card Body */}
-              <div style={{ padding: '2.25rem 2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                {/* Title and version */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                  <h3 style={{ 
-                    fontFamily: "'Inter', sans-serif", 
-                    fontSize: '1.4rem', 
-                    fontWeight: '700', 
-                    color: '#0f172a',
-                    margin: 0
-                  }}>
-                    {prod.name}
-                  </h3>
-                  <span style={{
-                    fontSize: '0.75rem',
-                    fontWeight: '600',
-                    color: prod.accentColor,
-                    background: `${prod.accentColor}12`,
-                    padding: '0.15rem 0.5rem',
-                    borderRadius: '4px'
-                  }}>{prod.version}</span>
-                </div>
-
-                <p style={{ 
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '0.9rem', 
-                  fontStyle: 'italic', 
-                  color: '#475569',
-                  marginBottom: '1rem',
-                  fontWeight: '500'
-                }}>
-                  "{prod.tagline}"
-                </p>
-
-                <p style={{ 
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: '0.88rem', 
-                  color: '#64748b',
-                  lineHeight: '1.6',
-                  marginBottom: '1.5rem'
-                }}>
-                  {prod.description}
-                </p>
-
-                {/* Bullet Points */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginBottom: '2.25rem' }}>
-                  {prod.features.map((feat, idx) => (
-                    <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                      <span style={{ 
-                        color: prod.accentColor, 
-                        background: `${prod.accentColor}12`, 
-                        borderRadius: '50%', 
-                        width: '18px', 
-                        height: '18px', 
-                        display: 'flex', 
-                        alignItems: 'center', 
-                        justifyContent: 'center',
-                        marginTop: '2px',
-                        flexShrink: 0
-                      }}>
-                        <Check size={11} strokeWidth={3} />
-                      </span>
-                      <span style={{ 
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: '0.85rem', 
-                        color: '#334155' 
-                      }}>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Actions */}
-                <div style={{ marginTop: 'auto', display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '0.75rem' }}>
-                  <button 
-                    onClick={() => setActiveSandbox(prod.id)}
-                    className="btn-product-visit"
-                    style={{
-                      background: 'transparent',
-                      color: '#475569',
-                      border: '1.5px solid #cbd5e1',
-                      borderRadius: '9999px',
-                      padding: '0.7rem 1rem',
-                      fontSize: '0.85rem',
-                      fontWeight: '600',
-                      fontFamily: "'Inter', sans-serif",
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '0.4rem',
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    Visit Platform <ArrowUpRight size={14} />
-                  </button>
-
-                  <button 
-                    onClick={() => navigate(`/get-started?product=${prod.name}`)}
-                    className="btn-product-demo"
-                    style={{
-                      background: prod.accentColor,
-                      color: '#ffffff',
-                      border: 'none',
-                      borderRadius: '9999px',
-                      padding: '0.7rem 1rem',
-                      fontSize: '0.85rem',
-                      fontWeight: '600',
-                      fontFamily: "'Inter', sans-serif",
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '0.4rem',
-                      boxShadow: `0 4px 12px ${prod.accentColor}25`,
-                      transition: 'all 0.2s ease'
-                    }}
-                  >
-                    Demo <ArrowRight size={14} />
-                  </button>
-                </div>
-
+              
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1.25rem', lineHeight: '1.5' }}>
+                {prod.description}
+              </p>
+              
+              {/* Features List */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.5rem', flex: 1 }}>
+                {prod.features.map((feat, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
+                    <Check size={14} style={{ color: prod.accentColor, marginTop: '2px', flexShrink: 0 }} strokeWidth={3} />
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{feat}</span>
+                  </div>
+                ))}
               </div>
+              
+              {/* Action Buttons */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+                <button 
+                  className="btn btn-secondary" 
+                  style={{ padding: '0.6rem 0', fontSize: '0.8rem' }}
+                  onClick={() => setActiveSandbox(prod.id)}
+                >
+                  View Platform
+                </button>
+                <button 
+                  className="btn btn-primary" 
+                  style={{ padding: '0.6rem 0', fontSize: '0.8rem', background: prod.accentColor, boxShadow: `0 4px 14px ${prod.accentColor}33` }}
+                  onClick={() => navigate(`/get-started?product=${prod.name}`)}
+                >
+                  Demo &rarr;
+                </button>
+              </div>
+              
             </div>
           ))}
         </div>
-
       </div>
 
-      {/* RENDER MOCK SANDBOX MODALS */}
       {activeSandbox && (
         <SandboxModal 
           product={activeSandbox} 
@@ -344,27 +197,6 @@ const Products = () => {
           }}
         />
       )}
-
-      {/* Styled JSX for hovers and custom interactions */}
-      <style>{`
-        .product-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
-          border-color: rgba(234, 88, 12, 0.15) !important;
-        }
-        .product-card:hover .product-card-img {
-          transform: scale(1.05);
-        }
-        .btn-product-visit:hover {
-          background: #f8fafc !important;
-          color: #0f172a !important;
-          border-color: #94a3b8 !important;
-        }
-        .btn-product-demo:hover {
-          filter: brightness(0.9);
-          transform: translateY(-1px);
-        }
-      `}</style>
     </section>
   );
 };
