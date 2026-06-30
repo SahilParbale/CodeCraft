@@ -169,9 +169,9 @@ const Products = () => {
                 <button 
                   className="btn btn-secondary" 
                   style={{ padding: '0.6rem 0', fontSize: '0.8rem' }}
-                  onClick={() => setActiveSandbox(prod.id)}
+                  onClick={() => navigate('/product/' + prod.id)}
                 >
-                  View Platform
+                  Product Details
                 </button>
                 <button 
                   className="btn btn-primary" 

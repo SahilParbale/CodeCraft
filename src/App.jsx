@@ -10,6 +10,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import GetStartedForm from './components/GetStartedForm';
 import ServiceDetail from './components/ServiceDetail';
+import ProductDetail from './components/ProductDetail';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         } />
         <Route path="/get-started" element={<GetStartedForm />} />
         <Route path="/service/:id" element={<ServiceDetail />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
       <Footer />
     </>
