@@ -5,12 +5,12 @@ import Logo from './Logo';
 const Footer = () => {
   return (
     <footer style={{ background: '#090d16', color: '#f8fafc', borderTop: '1px solid rgba(255,255,255,0.05)', fontFamily: "'Inter', sans-serif" }}>
-      <div className="container" style={{ padding: '3.5rem 0 3rem 0' }}>
+      <div className="container" style={{ padding: '2rem 0 1.5rem 0' }}>
         
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-          gap: '2.5rem'
+          gap: '1.5rem'
         }}>
           
           {/* Column 1: Brand Info */}
@@ -51,7 +51,7 @@ const Footer = () => {
           {/* Column 2: Products */}
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1.25rem', color: '#f1f5f9' }}>Products</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Nagarsevak Management</a></li>
               <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Voter Management</a></li>
               <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Builder Management</a></li>
@@ -62,7 +62,7 @@ const Footer = () => {
           {/* Column 3: Services */}
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1.25rem', color: '#f1f5f9' }}>Services</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               <li><a href="#services" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Custom Software</a></li>
               <li><a href="#services" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Web Application</a></li>
               <li><a href="#services" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Mobile App Dev</a></li>
@@ -75,7 +75,7 @@ const Footer = () => {
           {/* Column 4: Company */}
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1.25rem', color: '#f1f5f9' }}>Company</h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>About Us</a></li>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Our Process</a></li>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Careers</a></li>
@@ -86,7 +86,7 @@ const Footer = () => {
           {/* Column 5: Contact Info */}
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1.25rem', color: '#f1f5f9' }}>Contact</h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {/* Phone */}
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.8rem', color: '#94a3b8' }}>
                 <Phone size={14} style={{ color: '#94a3b8', flexShrink: 0, marginTop: '2px' }} />
@@ -122,7 +122,7 @@ const Footer = () => {
       </div>
       
       {/* Bottom Bar */}
-      <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', padding: '1.25rem 0' }}>
+      <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.05)', padding: '0.75rem 0' }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <p style={{ color: '#64748b', fontSize: '0.78rem', margin: 0 }}>
             &copy; {new Date().getFullYear()} CodeCraft Technologies. All rights reserved.
