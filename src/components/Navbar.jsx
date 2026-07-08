@@ -126,7 +126,7 @@ const Navbar = () => {
           onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.02)'}
           onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          <Logo scale={0.7} />
+          <Logo scale={0.9} horizontal={true} />
         </div>
 
         {/* Desktop Links */}
@@ -182,7 +182,7 @@ const Navbar = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '0.4rem',
-              boxShadow: btnHovered ? '0 8px 20px rgba(255, 90, 0, 0.25)' : 'none',
+              boxShadow: btnHovered ? '0 8px 20px rgba(37, 99, 235, 0.25)' : 'none',
               transform: btnHovered ? 'translateY(-1px)' : 'none',
               transition: 'all 0.25s ease'
             }}

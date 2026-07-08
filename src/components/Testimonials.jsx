@@ -32,7 +32,7 @@ const Testimonials = () => {
         
         {/* Header */}
         <div className="section-header" style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
-          <span className="section-tag" style={{ background: '#fff7ed', border: '1px solid rgba(255,90,0,0.15)' }}>TESTIMONIALS</span>
+          <span className="section-tag" style={{ background: '#f0f5ff', color: 'var(--accent-primary)', border: '1px solid rgba(37, 99, 235, 0.15)' }}>TESTIMONIALS</span>
           <h2 className="section-title">Our Happy Customers</h2>
         </div>
 

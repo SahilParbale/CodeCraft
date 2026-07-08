@@ -3,22 +3,22 @@ import { Zap, Layers, Shield, Headphones, ArrowRight } from 'lucide-react';
 
 const features = [
   {
-    icon: <Zap size={24} style={{ color: '#ff5a00' }} />,
+    icon: <Zap size={24} style={{ color: '#2563eb' }} />,
     title: 'Lightning-Fast Development',
     desc: 'Agile processes and modern tools to deliver results — faster.'
   },
   {
-    icon: <Layers size={24} style={{ color: '#ff5a00' }} />,
+    icon: <Layers size={24} style={{ color: '#2563eb' }} />,
     title: 'Scalable Architecture',
     desc: 'Future-ready solutions designed to grow with your business.'
   },
   {
-    icon: <Shield size={24} style={{ color: '#ff5a00' }} />,
+    icon: <Shield size={24} style={{ color: '#2563eb' }} />,
     title: 'Secure & Reliable',
     desc: 'We follow best practices to ensure security, performance and reliability.'
   },
   {
-    icon: <Headphones size={24} style={{ color: '#ff5a00' }} />,
+    icon: <Headphones size={24} style={{ color: '#2563eb' }} />,
     title: '24/7 Expert Support',
     desc: 'Our expert team is always here to support your success.'
   }
@@ -35,7 +35,7 @@ const WhyChooseUs = () => {
         left: '-5%',
         width: '300px',
         height: '300px',
-        background: 'rgba(255, 90, 0, 0.05)',
+        background: 'radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, rgba(37, 99, 235, 0.03) 70%)',
         filter: 'blur(80px)',
         borderRadius: '50%'
       }}></div>
@@ -45,7 +45,7 @@ const WhyChooseUs = () => {
           
           {/* Left Side */}
           <div style={{ flex: '1 1 min(100%, 400px)' }} className="animate-fade-right">
-            <span className="section-tag" style={{ color: '#ff5a00', background: 'rgba(255, 90, 0, 0.1)', border: '1px solid rgba(255, 90, 0, 0.2)' }}>WHY CHOOSE US</span>
+            <span className="section-tag" style={{ color: '#2563eb', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid rgba(37, 99, 235, 0.2)' }}>WHY CHOOSE US</span>
             <h2 className="section-title" style={{ color: '#0f172a', fontSize: '3rem', marginTop: '0.5rem' }}>
               Engineering You Can Depend On
             </h2>
@@ -62,11 +62,11 @@ const WhyChooseUs = () => {
                   width: '50px',
                   height: '50px',
                   borderRadius: '12px',
-                  background: 'rgba(255, 90, 0, 0.1)',
+                  background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(37, 99, 235, 0.08) 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  border: '1px solid rgba(255, 90, 0, 0.2)'
+                  border: '1px solid rgba(37, 99, 235, 0.15)'
                 }}>
                   {feature.icon}
                 </div>

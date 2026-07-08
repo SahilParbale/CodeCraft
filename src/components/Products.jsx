@@ -31,17 +31,17 @@ const Products = () => {
     {
       id: 'nagarsevak',
       name: 'Nagarsevak Management',
-      description: 'Complete Nagarsevak management system with workflow automation, tracking & reporting.',
+      description: 'The ultimate all-in-one ERP and workflow automation system designed exclusively for modern civic leaders.',
       features: [
-        'Citizen & complaint management',
-        'Task & staff management',
-        'Reports & analytics dashboard',
-        'Role-based access control'
+        'Smart Automation & AI Integration',
+        'Real-time Tracking & Alerts',
+        'Data Driven Insights & Analytics',
+        '100% Mobile Responsive'
       ],
       image: nagarsevakImg,
       icon: <Users size={20} />,
-      accentColor: '#ff5a00',
-      bgLight: '#fff7ed'
+      accentColor: '#2563eb',
+      bgLight: '#f0f5ff'
     },
     {
       id: 'voterpro',
@@ -55,8 +55,8 @@ const Products = () => {
       ],
       image: voterImg,
       icon: <Users size={20} />,
-      accentColor: '#ff5a00',
-      bgLight: '#fff7ed'
+      accentColor: '#2563eb',
+      bgLight: '#f0f5ff'
     },
     {
       id: 'buildermanager',
@@ -70,8 +70,8 @@ const Products = () => {
       ],
       image: builderImg,
       icon: <Briefcase size={20} />,
-      accentColor: '#ff5a00',
-      bgLight: '#fff7ed',
+      accentColor: '#2563eb',
+      bgLight: '#f0f5ff',
       comingSoon: true
     },
     {
@@ -86,8 +86,8 @@ const Products = () => {
       ],
       image: gimbooksImg,
       icon: <Activity size={20} />,
-      accentColor: '#ff5a00',
-      bgLight: '#fff7ed'
+      accentColor: '#2563eb',
+      bgLight: '#f0f5ff'
     }
   ];
 
@@ -112,7 +112,23 @@ const Products = () => {
           marginTop: '2rem'
         }}>
           {productsData.map((prod, idx) => (
-            <div key={prod.id} className="glass-card animate-fade-up" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', animationDelay: `${idx * 0.1}s`, background: 'white' }}>
+            <div 
+              key={prod.id} 
+              className="glass-card animate-fade-up" 
+              onClick={() => {
+                if (!prod.comingSoon) {
+                  navigate('/product/' + prod.id);
+                }
+              }}
+              style={{ 
+                padding: '1.5rem', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                animationDelay: `${idx * 0.1}s`, 
+                background: 'white',
+                cursor: prod.comingSoon ? 'default' : 'pointer'
+              }}
+            >
               
               {/* Image Thumbnail */}
               <div style={{ width: '100%', height: '140px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.25rem', border: '1px solid var(--border-color)' }}>
@@ -137,9 +153,9 @@ const Products = () => {
                       fontSize: '0.65rem',
                       fontWeight: '800',
                       padding: '0.2rem 0.5rem',
-                      background: '#fff7ed',
+                      background: '#f0f5ff',
                       color: 'var(--accent-primary)',
-                      border: '1px solid rgba(255, 90, 0, 0.2)',
+                      border: '1px solid rgba(37, 99, 235, 0.2)',
                       borderRadius: '999px',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em'
@@ -168,15 +184,27 @@ const Products = () => {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
                 <button 
                   className="btn btn-secondary" 
-                  style={{ padding: '0.6rem 0', fontSize: '0.8rem' }}
-                  onClick={() => navigate('/product/' + prod.id)}
+                  style={{ padding: '0.6rem 0', fontSize: '0.8rem', opacity: prod.comingSoon ? 0.5 : 1, cursor: prod.comingSoon ? 'default' : 'pointer' }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (!prod.comingSoon) {
+                      navigate('/product/' + prod.id);
+                    }
+                  }}
+                  disabled={prod.comingSoon}
                 >
                   Product Details
                 </button>
                 <button 
                   className="btn btn-primary" 
-                  style={{ padding: '0.6rem 0', fontSize: '0.8rem', background: prod.accentColor, boxShadow: `0 4px 14px ${prod.accentColor}33` }}
-                  onClick={() => navigate(`/get-started?product=${prod.name}`)}
+                  style={{ padding: '0.6rem 0', fontSize: '0.8rem', background: prod.accentColor, boxShadow: `0 4px 14px ${prod.accentColor}33`, opacity: prod.comingSoon ? 0.5 : 1, cursor: prod.comingSoon ? 'default' : 'pointer' }}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (!prod.comingSoon) {
+                      navigate(`/get-started?product=${prod.name}`);
+                    }
+                  }}
+                  disabled={prod.comingSoon}
                 >
                   Demo &rarr;
                 </button>
@@ -244,7 +272,7 @@ const SandboxModal = ({ product, onClose, onDemoRequest }) => {
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{
-              background: '#ea580c',
+              background: '#2563eb',
               fontSize: '0.65rem',
               fontWeight: '800',
               padding: '0.2rem 0.5rem',
@@ -265,7 +293,7 @@ const SandboxModal = ({ product, onClose, onDemoRequest }) => {
                 product === 'centrallink' ? 'CentralLink' : 'MonitorCraft'
               )}
               style={{
-                background: '#ea580c',
+                background: '#2563eb',
                 color: '#ffffff',
                 border: 'none',
                 borderRadius: '6px',
@@ -360,7 +388,7 @@ const CraftPortalSandbox = () => {
       {/* Sidebar */}
       <div className="sandbox-sidebar">
         <div style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', color: '#e2e8f0', letterSpacing: '0.05em' }}>
-          CraftPortal <span style={{ color: '#ea580c' }}>v2.4</span>
+          CraftPortal <span style={{ color: '#2563eb' }}>v2.4</span>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           <div style={{ background: '#1e293b', color: '#ffffff', padding: '0.5rem 0.75rem', borderRadius: '8px', fontSize: '0.85rem', fontWeight: '600', cursor: 'pointer' }}>Workspace</div>
@@ -379,7 +407,7 @@ const CraftPortalSandbox = () => {
             <h4 style={{ fontSize: '1.25rem', fontWeight: '700', color: '#0f172a', fontFamily: "'Inter', sans-serif" }}>Acme Corp Project Workspace</h4>
             <p style={{ fontSize: '0.85rem', color: '#64748b' }}>Upload project specs or track file approvals safely.</p>
           </div>
-          <span style={{ fontSize: '0.75rem', color: '#ea580c', background: '#ffedd5', padding: '0.25rem 0.6rem', borderRadius: '9999px', fontWeight: '600', border: '1px solid rgba(234, 88, 12, 0.2)' }}>
+          <span style={{ fontSize: '0.75rem', color: '#2563eb', background: '#f0f5ff', padding: '0.25rem 0.6rem', borderRadius: '9999px', fontWeight: '600', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
             ● Encrypted Pipeline Active
           </span>
         </div>
@@ -388,12 +416,12 @@ const CraftPortalSandbox = () => {
         <div style={{ background: '#ffffff', borderRadius: '12px', border: '1px solid #e2e8f0', padding: '1.25rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <span style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1e293b' }}>Active Project Milestone: Phase 3 (Development)</span>
-            <span style={{ fontSize: '0.8rem', color: '#ea580c', fontWeight: '600' }}>70% complete</span>
+            <span style={{ fontSize: '0.8rem', color: '#2563eb', fontWeight: '600' }}>70% complete</span>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
             {['Discovery & UX', 'Architecture Design', 'Sprint Execution', 'Deployment & QA'].map((phase, idx) => (
               <div key={idx} style={{ position: 'relative' }}>
-                <div style={{ height: '6px', background: idx <= 2 ? '#ea580c' : '#e2e8f0', borderRadius: '3px', marginBottom: '0.5rem' }}></div>
+                <div style={{ height: '6px', background: idx <= 2 ? '#2563eb' : '#e2e8f0', borderRadius: '3px', marginBottom: '0.5rem' }}></div>
                 <div style={{ fontSize: '0.75rem', fontWeight: idx === 2 ? '700' : '500', color: idx <= 2 ? '#0f172a' : '#94a3b8' }}>
                   {idx + 1}. {phase}
                 </div>
@@ -412,7 +440,7 @@ const CraftPortalSandbox = () => {
               {files.map((file, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #f1f5f9' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <FileText size={20} style={{ color: '#ea580c' }} />
+                    <FileText size={20} style={{ color: '#2563eb' }} />
                     <div>
                       <div style={{ fontSize: '0.85rem', fontWeight: '600', color: '#334155' }}>{file.name}</div>
                       <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{file.size} • Uploaded {file.date}</div>
@@ -421,8 +449,8 @@ const CraftPortalSandbox = () => {
                   <span style={{
                     fontSize: '0.7rem',
                     fontWeight: '600',
-                    color: file.status === 'Verified' ? '#ea580c' : '#f59e0b',
-                    background: file.status === 'Verified' ? '#ffedd5' : '#fffbeb',
+                    color: file.status === 'Verified' ? '#2563eb' : '#eab308',
+                    background: file.status === 'Verified' ? '#f0f5ff' : '#fef9c3',
                     padding: '0.2rem 0.5rem',
                     borderRadius: '4px'
                   }}>{file.status}</span>
@@ -448,8 +476,8 @@ const CraftPortalSandbox = () => {
                   background: '#f8fafc'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#ea580c';
-                  e.currentTarget.style.background = 'rgba(234, 88, 12, 0.02)';
+                  e.currentTarget.style.borderColor = '#2563eb';
+                  e.currentTarget.style.background = 'rgba(37, 99, 235, 0.02)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = '#cbd5e1';
@@ -462,10 +490,10 @@ const CraftPortalSandbox = () => {
               </div>
             ) : (
               <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
-                <RefreshCw size={24} className="spin-icon" style={{ color: '#ea580c', margin: '0 auto 1rem', animation: 'spin 1s linear infinite' }} />
+                <RefreshCw size={24} className="spin-icon" style={{ color: '#2563eb', margin: '0 auto 1rem', animation: 'spin 1s linear infinite' }} />
                 <div style={{ fontSize: '0.85rem', fontWeight: '600', color: '#334155' }}>Uploading file...</div>
                 <div style={{ width: '100%', background: '#e2e8f0', height: '6px', borderRadius: '3px', marginTop: '0.75rem', overflow: 'hidden' }}>
-                  <div style={{ width: `${uploadProgress}%`, height: '100%', background: '#ea580c', transition: 'width 0.2s ease' }}></div>
+                  <div style={{ width: `${uploadProgress}%`, height: '100%', background: '#2563eb', transition: 'width 0.2s ease' }}></div>
                 </div>
                 <div style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.4rem' }}>{uploadProgress}% completed</div>
               </div>
@@ -538,9 +566,9 @@ const CentralLinkSandbox = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            border: '1px solid rgba(234, 88, 12, 0.2)'
+            border: '1px solid rgba(37, 99, 235, 0.2)'
           }}>
-            <span style={{ color: '#ea580c' }}>✓</span> {toastMessage}
+            <span style={{ color: '#2563eb' }}>✓</span> {toastMessage}
           </div>
         )}
 
@@ -559,7 +587,7 @@ const CentralLinkSandbox = () => {
               style={{
                 width: '42px',
                 height: '22px',
-                background: routingState ? '#ea580c' : '#cbd5e1',
+                background: routingState ? '#2563eb' : '#cbd5e1',
                 borderRadius: '11px',
                 padding: '2px',
                 cursor: 'pointer',
@@ -577,10 +605,10 @@ const CentralLinkSandbox = () => {
         {/* Row metrics cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
           {[
-            { label: 'Active Channels', val: '12 / 32', color: '#ea580c', desc: 'Trunks in operation' },
-            { label: 'Call Success Rate', val: '99.82%', color: '#ea580c', desc: 'Last 24 hours' },
-            { label: 'Avg Call Duration', val: '4m 12s', color: '#ea580c', desc: 'Queue averages' },
-            { label: 'Jitter / Latency', val: '14 ms', color: '#ea580c', desc: 'Network QoS rating' }
+            { label: 'Active Channels', val: '12 / 32', color: '#2563eb', desc: 'Trunks in operation' },
+            { label: 'Call Success Rate', val: '99.82%', color: '#2563eb', desc: 'Last 24 hours' },
+            { label: 'Avg Call Duration', val: '4m 12s', color: '#2563eb', desc: 'Queue averages' },
+            { label: 'Jitter / Latency', val: '14 ms', color: '#2563eb', desc: 'Network QoS rating' }
           ].map((card, i) => (
             <div key={i} style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '1rem' }}>
               <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: '500', marginBottom: '0.25rem' }}>{card.label}</div>
@@ -623,8 +651,8 @@ const CentralLinkSandbox = () => {
                         borderRadius: '4px',
                         fontWeight: '600',
                         fontSize: '0.7rem',
-                        color: log.status === 'Completed' ? '#ea580c' : '#ef4444',
-                        background: log.status === 'Completed' ? '#ffedd5' : '#fef2f2'
+                        color: log.status === 'Completed' ? '#2563eb' : '#ef4444',
+                        background: log.status === 'Completed' ? '#f0f5ff' : '#fef2f2'
                       }}>{log.status}</span>
                     </td>
                   </tr>
@@ -689,7 +717,7 @@ const MonitorCraftSandbox = () => {
       {/* Left Sidebar */}
       <div className="sandbox-sidebar" style={{ background: '#020617', borderRight: '1px solid #1e293b' }}>
         <div style={{ fontSize: '0.8rem', fontWeight: '800', color: '#f8fafc', letterSpacing: '0.05em' }}>
-          MONITORCRAFT <span style={{ color: '#ea580c' }}>v1.2</span>
+          MONITORCRAFT <span style={{ color: '#2563eb' }}>v1.2</span>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
           <div style={{ background: '#1e293b', color: '#f8fafc', padding: '0.5rem 0.75rem', borderRadius: '8px', fontSize: '0.85rem', fontWeight: '600', cursor: 'pointer' }}>Server Nodes</div>
@@ -709,8 +737,8 @@ const MonitorCraftSandbox = () => {
             <p style={{ fontSize: '0.75rem', color: '#64748b' }}>Active live tracking of CodeCraft client environments.</p>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ea580c', display: 'inline-block', animation: 'blink 1.5s infinite' }}></span>
-            <span style={{ fontSize: '0.75rem', color: '#ea580c', fontWeight: '600' }}>SYS ACTIVE - ALL SYSTEMS GO</span>
+            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2563eb', display: 'inline-block', animation: 'blink 1.5s infinite' }}></span>
+            <span style={{ fontSize: '0.75rem', color: '#2563eb', fontWeight: '600' }}>SYS ACTIVE - ALL SYSTEMS GO</span>
           </div>
         </div>
 
@@ -725,18 +753,18 @@ const MonitorCraftSandbox = () => {
               {servers.map((srv, idx) => (
                 <div key={idx} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px dashed #1e293b', paddingBottom: '0.5rem', fontSize: '0.75rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <Server size={14} style={{ color: '#ea580c' }} />
+                    <Server size={14} style={{ color: '#2563eb' }} />
                     <span style={{ color: '#f8fafc', fontWeight: 'bold' }}>{srv.name}</span>
                     <span style={{ color: '#64748b' }}>({srv.location})</span>
                   </div>
                   
                   <div style={{ display: 'flex', gap: '1.5rem' }}>
-                    <span>CPU: <strong style={{ color: idx === 0 ? '#ea580c' : '#f8fafc' }}>{srv.cpu}</strong></span>
+                    <span>CPU: <strong style={{ color: idx === 0 ? '#2563eb' : '#f8fafc' }}>{srv.cpu}</strong></span>
                     <span>RAM: <strong style={{ color: '#f8fafc' }}>{srv.ram}</strong></span>
                     <span>Disk: <strong style={{ color: '#f8fafc' }}>{srv.disk}</strong></span>
                   </div>
 
-                  <span style={{ color: '#ea580c', fontWeight: 'bold' }}>[ONLINE]</span>
+                  <span style={{ color: '#2563eb', fontWeight: 'bold' }}>[ONLINE]</span>
                 </div>
               ))}
             </div>
@@ -751,7 +779,7 @@ const MonitorCraftSandbox = () => {
             <div>
               <div style={{ fontSize: '0.8rem', color: '#cbd5e1', fontWeight: '700', marginBottom: '1rem' }}>de-prod-app-01 CPU METRIC</div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                <Cpu size={32} style={{ color: '#ea580c' }} />
+                <Cpu size={32} style={{ color: '#2563eb' }} />
                 <div>
                   <div style={{ fontSize: '1.75rem', fontWeight: '800', color: '#f8fafc' }}>{cpuUsage}%</div>
                   <div style={{ fontSize: '0.65rem', color: '#64748b' }}>Load Balancer Active</div>
@@ -762,7 +790,7 @@ const MonitorCraftSandbox = () => {
             {/* Visual ticking meter */}
             <div>
               <div style={{ width: '100%', background: '#1e293b', height: '10px', borderRadius: '5px', overflow: 'hidden', marginBottom: '0.5rem' }}>
-                <div style={{ width: `${cpuUsage}%`, height: '100%', background: '#ea580c', transition: 'width 0.4s ease' }}></div>
+                <div style={{ width: `${cpuUsage}%`, height: '100%', background: '#2563eb', transition: 'width 0.4s ease' }}></div>
               </div>
               <div style={{ fontSize: '0.65rem', color: '#64748b', display: 'flex', justifyContent: 'space-between' }}>
                 <span>0%</span>
@@ -784,7 +812,7 @@ const MonitorCraftSandbox = () => {
                 <div key={i} style={{ lineHeight: '1.4' }}>
                   <span style={{ color: '#64748b' }}>[{log.time}]</span>{' '}
                   <span style={{ 
-                    color: log.type === 'WARN' ? '#f59e0b' : '#ea580c', 
+                    color: log.type === 'WARN' ? '#eab308' : '#2563eb', 
                     fontWeight: 'bold' 
                   }}>[{log.type}]</span>{' '}
                   <span style={{ color: '#cbd5e1' }}>{log.msg}</span>

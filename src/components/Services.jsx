@@ -50,7 +50,7 @@ const Services = () => {
         
         {/* Header */}
         <div className="section-header" style={{ marginBottom: '2.5rem', textAlign: 'center' }}>
-          <span className="section-tag" style={{ color: 'var(--accent-primary)', background: '#fff7ed', border: '1px solid rgba(255, 90, 0, 0.15)' }}>OUR SERVICES</span>
+          <span className="section-tag" style={{ color: 'var(--accent-primary)', background: '#f0f5ff', border: '1px solid rgba(37, 99, 235, 0.15)' }}>OUR SERVICES</span>
           <h2 className="section-title" style={{ marginTop: '1rem', color: '#0f172a' }}>End-to-End Solutions for Every Business Need</h2>
         </div>
 
@@ -68,8 +68,8 @@ const Services = () => {
               style={{
                 background: '#ffffff',
                 border: '1.5px solid #f1f5f9',
-                padding: '2rem 1.75rem',
-                borderRadius: '16px',
+                padding: '1.25rem 1.25rem',
+                borderRadius: '12px',
                 animationDelay: `${index * 0.1}s`,
                 display: 'flex',
                 flexDirection: 'column',
@@ -77,9 +77,9 @@ const Services = () => {
                 transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.borderColor = 'rgba(255, 90, 0, 0.2)';
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(255, 90, 0, 0.04)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.borderColor = 'rgba(37, 99, 235, 0.2)';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.04)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -90,25 +90,25 @@ const Services = () => {
               
               {/* Icon Box */}
               <div style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '12px',
-                background: '#fcf8f5',
+                width: '40px',
+                height: '40px',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, rgba(124, 58, 237, 0.08) 0%, rgba(37, 99, 235, 0.08) 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 color: 'var(--accent-primary)',
-                marginBottom: '1.25rem',
-                border: '1px solid rgba(255, 90, 0, 0.15)'
+                marginBottom: '0.75rem',
+                border: '1px solid rgba(37, 99, 235, 0.15)'
               }}>
                 {service.icon}
               </div>
               
-              <h3 style={{ fontSize: '1.2rem', fontWeight: '700', color: '#0f172a', marginBottom: '0.75rem' }}>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: '700', color: '#0f172a', marginBottom: '0.5rem' }}>
                 {service.title}
               </h3>
               
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: '1.6', flex: 1, marginBottom: '1.25rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.5', flex: 1, marginBottom: '0.85rem' }}>
                 {service.description}
               </p>
               

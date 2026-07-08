@@ -625,7 +625,7 @@ main {
 
 .project-tech-badge-blue {
   background: rgba(14, 165, 233, 0.06);
-  color: #0284c7;
+  color: #2563eb;
 }
 
 .project-tech-badge-yellow {
@@ -852,14 +852,14 @@ main {
 
 .testimonial-card-light:hover {
   transform: translateY(-4px);
-  border-color: rgba(225, 90, 35, 0.1);
+  border-color: rgba(37, 99, 235, 0.1);
   box-shadow: 0 12px 30px rgba(0,0,0,0.02);
 }
 
 .testimonial-stars {
   display: flex;
   gap: 0.2rem;
-  color: #ea580c;
+  color: #2563eb;
   margin-bottom: 1.25rem;
 }
 
@@ -970,11 +970,11 @@ main {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: #ea580c;
+  background-color: #2563eb;
   transition: width 0.3s ease;
 }
 .footer-link:hover {
-  color: #ea580c;
+  color: #2563eb;
 }
 
 .footer-link:hover::after {
@@ -1016,13 +1016,13 @@ main {
 }
 
 .nav-item:hover {
-  color: #ea580c;
+  color: #2563eb;
 }
 
 .nav-item.active {
-  color: #ea580c;
+  color: #2563eb;
   font-weight: 600;
-  border-bottom: 2px solid #ea580c;
+  border-bottom: 2px solid #2563eb;
 }
 
 /* Responsive Grid Utilities */
@@ -1258,3 +1258,147 @@ main {
     display: block;
   }
 }
+
+/* Responsive Enhancements */
+.hero-section-title {
+  font-size: 3.6rem;
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+  color: #0f172a;
+}
+@media (max-width: 768px) {
+  .hero-section-title {
+    font-size: 2.2rem;
+  }
+  .hero-decor-card {
+    display: none !important;
+  }
+}
+
+.contact-info-box {
+  flex: 1 1 min(100%, 280px);
+  max-width: 320px;
+  background: #f0f5ff;
+  color: #0f172a;
+  padding: 2.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border-left: 1px solid #bae6fd;
+  font-family: "Outfit", sans-serif;
+}
+@media (max-width: 768px) {
+  .contact-info-box {
+    max-width: 100% !important;
+    border-left: none !important;
+    border-top: 1px solid #bae6fd !important;
+  }
+}
+
+.product-detail-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+.product-detail-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 768px) {
+  .product-detail-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .product-detail-title {
+    font-size: 2.2rem;
+  }
+}
+
+.product-versions-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+@media (max-width: 768px) {
+  .product-versions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-version-details-panel {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  .product-version-details-panel {
+    padding: 1.5rem !important;
+  }
+}
+
+.product-version-details-row {
+  display: flex;
+  gap: 3rem;
+}
+@media (max-width: 768px) {
+  .product-version-details-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .product-version-illustration {
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}
+
+.cta-banner-wrapper {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 24px;
+  padding: 3rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
+}
+@media (max-width: 768px) {
+  .cta-banner-wrapper {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.service-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+@media (max-width: 768px) {
+  .service-detail-header {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .service-detail-header h1 {
+    font-size: 2rem !important;
+  }
+}
+

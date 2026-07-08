@@ -46,8 +46,8 @@ const Hero = () => {
               alignItems: 'center',
               gap: '0.5rem',
               padding: '0.35rem 1.25rem',
-              background: '#fcf8f5',
-              border: '1px solid rgba(255, 90, 0, 0.15)',
+              background: '#f0f5ff',
+              border: '1px solid rgba(37, 99, 235, 0.15)',
               borderRadius: '999px',
               color: 'var(--accent-primary)',
               fontSize: '0.8rem',
@@ -59,9 +59,14 @@ const Hero = () => {
               <span style={{ color: 'var(--accent-primary)', fontSize: '0.7rem' }}>◀</span> WE ARE CODE CRAFT
             </div>
             
-            <h1 className="section-title" style={{ fontSize: '3.6rem', fontWeight: '900', marginBottom: '1.25rem', lineHeight: '1.15', color: '#0f172a' }}>
+            <h1 className="hero-section-title">
               We Build Software That Moves Your <br/>
-              <span style={{ color: '#ff5a00' }}>Business Forward.</span>
+              <span style={{ 
+                background: 'linear-gradient(90deg, #7c3aed 0%, #2563eb 55%, #00d2ff 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                display: 'inline-block'
+              }}>Business Forward.</span>
             </h1>
             
             <p className="section-subtitle" style={{ fontSize: '1.05rem', marginBottom: '2rem', maxWidth: '520px', color: 'var(--text-secondary)' }}>
@@ -108,10 +113,10 @@ const Hero = () => {
                 <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '20px', height: '20px', background: '#ecfdf5', borderRadius: '50%', color: '#10b981' }}>✓</span> Secure & Scalable
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', fontWeight: '700', color: '#334155' }}>
-                <Zap size={18} style={{ color: '#ff5a00' }} fill="#ff5a00" /> Agile & Reliable
+                <Zap size={18} style={{ color: '#2563eb' }} fill="#2563eb" /> Agile & Reliable
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', fontWeight: '700', color: '#334155' }}>
-                <Clock size={18} style={{ color: '#ff5a00' }} /> On-Time Delivery
+                <Clock size={18} style={{ color: '#2563eb' }} /> On-Time Delivery
               </div>
             </div>
           </div>
@@ -144,7 +149,7 @@ const Hero = () => {
               zIndex: 2,
               border: '4px solid #1e293b',
               borderBottomWidth: '12px',
-              backgroundImage: 'radial-gradient(circle at top right, rgba(255,90,0,0.1), transparent)',
+              backgroundImage: 'radial-gradient(circle at top right, rgba(37,99,235,0.1), transparent)',
               transform: `perspective(1000px) rotateY(${mousePos.x}deg) rotateX(${mousePos.y}deg)`,
               transition: 'transform 0.1s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease'
             }}>
@@ -152,7 +157,7 @@ const Hero = () => {
               <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'white', marginBottom: '0.4rem', lineHeight: '1.2' }}>Building Digital Success</h3>
                 <p style={{ color: '#94a3b8', fontSize: '0.85rem' }}>
-                  Powering <span style={{ color: '#ff5a00' }}>ideas</span> with <span style={{ color: '#ff5a00' }}>code.</span>
+                  Powering <span style={{ color: '#2563eb' }}>ideas</span> with <span style={{ color: '#00d2ff' }}>code.</span>
                 </p>
               </div>
             </div>
@@ -177,14 +182,14 @@ const Hero = () => {
               top: '-5%', 
               right: '-8%', 
               zIndex: 3, 
-              filter: 'drop-shadow(0 15px 25px rgba(255,90,0,0.35))',
+              filter: 'drop-shadow(0 15px 25px rgba(37,99,235,0.35))',
               transform: `translate(${mousePos.x * -1.5}px, ${mousePos.y * -1.5}px)`,
               transition: 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)'
             }}>
               <svg width="140" height="140" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                 {/* Fire Trails */}
-                <path d="M 35 90 C 25 95 15 105 10 115 C 20 110 30 100 35 90 Z" fill="#ff7a00" />
-                <path d="M 40 85 C 32 90 22 98 18 106 C 26 102 34 94 40 85 Z" fill="#ffc000" />
+                <path d="M 35 90 C 25 95 15 105 10 115 C 20 110 30 100 35 90 Z" fill="#7c3aed" />
+                <path d="M 40 85 C 32 90 22 98 18 106 C 26 102 34 94 40 85 Z" fill="#00d2ff" />
                 {/* Rocket Body */}
                 <path d="M 45 75 L 85 35 C 95 25 105 25 110 10 C 95 15 95 25 85 35 L 45 75 Z" fill="white" />
                 <path d="M 52 68 L 85 35 C 95 25 105 25 110 10 C 95 15 90 20 82 28 L 49 61 Z" fill="#f1f5f9" />
@@ -195,12 +200,12 @@ const Hero = () => {
                 <path d="M 70 50 L 70 30 L 55 45 Z" fill="white" />
                 {/* Window */}
                 <circle cx="75" cy="45" r="6" fill="#0f172a" />
-                <circle cx="75" cy="45" r="3" fill="#ff5a00" />
+                <circle cx="75" cy="45" r="3" fill="#2563eb" />
               </svg>
             </div>
             
             {/* Code Tag Card */}
-            <div style={{
+            <div className="hero-decor-card" style={{
               position: 'absolute', top: '15%', left: '-2%', zIndex: 3,
               transform: `translate(${mousePos.x * -1.2}px, ${mousePos.y * -1.2}px)`,
               transition: 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)'
@@ -213,7 +218,7 @@ const Hero = () => {
             </div>
             
             {/* Phone Card */}
-            <div style={{
+            <div className="hero-decor-card" style={{
               position: 'absolute', top: '50%', left: '2%', zIndex: 3,
               transform: `translate(${mousePos.x * -0.8}px, ${mousePos.y * -0.8}px)`,
               transition: 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)'
@@ -226,7 +231,7 @@ const Hero = () => {
             </div>
             
             {/* Chart Card */}
-            <div style={{
+            <div className="hero-decor-card" style={{
               position: 'absolute', top: '32%', right: '8%', zIndex: 3,
               transform: `translate(${mousePos.x * -1}px, ${mousePos.y * -1}px)`,
               transition: 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)'
@@ -239,7 +244,7 @@ const Hero = () => {
             </div>
             
             {/* Cloud Card */}
-            <div style={{
+            <div className="hero-decor-card" style={{
               position: 'absolute', bottom: '15%', right: '-8%', zIndex: 3,
               transform: `translate(${mousePos.x * -0.6}px, ${mousePos.y * -0.6}px)`,
               transition: 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)'
@@ -247,7 +252,7 @@ const Hero = () => {
               <div className="glass-card animate-float" style={{ 
                 padding: '1.25rem', borderRadius: '16px', background: 'rgba(255, 255, 255, 0.65)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.9)', boxShadow: '0 15px 35px rgba(0,0,0,0.06)' 
               }}>
-                <Cloud size={28} style={{ color: '#ff5a00' }} />
+                <Cloud size={28} style={{ color: '#2563eb' }} />
               </div>
             </div>
  
@@ -265,7 +270,7 @@ const Hero = () => {
         }}>
           {/* Stat 1 */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div style={{ background: 'rgba(255,90,0,0.1)', color: 'var(--accent-primary)', padding: '12px', borderRadius: '12px' }}>
+            <div style={{ background: 'rgba(37,99,235,0.1)', color: 'var(--accent-primary)', padding: '12px', borderRadius: '12px' }}>
               <Briefcase size={24} />
             </div>
             <div>

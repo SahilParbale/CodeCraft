@@ -1,16 +1,28 @@
 <svg width="85" height="85" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-c-gradient" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#00d2ff" />
+      <stop offset="50%" stopColor="#2563eb" />
+      <stop offset="100%" stopColor="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="logo-particle-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stopColor="#00d2ff" />
+      <stop offset="50%" stopColor="#2563eb" />
+      <stop offset="100%" stopColor="#7c3aed" />
+    </linearGradient>
+  </defs>
   <!-- The 'C' -->
-  <path d="M 48 20 A 18 18 0 1 0 48 40" stroke="#ff5a00" stroke-width="8" stroke-linecap="round" fill="none" />
+  <path d="M 48 20 A 18 18 0 1 0 48 40" stroke="url(#logo-c-gradient)" stroke-width="8" stroke-linecap="round" fill="none" />
   
   <!-- The '</>' -->
-  <path d="M 30 24 L 24 30 L 30 36" stroke="#ff5a00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M 36 21 L 32 39" stroke="#ff5a00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-  <path d="M 38 24 L 44 30 L 38 36" stroke="#ff5a00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 30 24 L 24 30 L 30 36" stroke="#0f172a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 36 21 L 32 39" stroke="#0f172a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 38 24 L 44 30 L 38 36" stroke="#0f172a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
   
   <!-- The Particles -->
-  <path d="M 6 18 L 9 18 M 13 18 L 18 18" stroke="#ff5a00" stroke-width="3.5" stroke-linecap="round" />
-  <path d="M 2 24 L 10 24 M 14 24 L 18 24" stroke="#ff5a00" stroke-width="3.5" stroke-linecap="round" />
-  <path d="M 8 30 L 12 30 M 16 30 L 18 30" stroke="#ff5a00" stroke-width="3.5" stroke-linecap="round" />
-  <path d="M 4 36 L 8 36 M 12 36 L 18 36" stroke="#ff5a00" stroke-width="3.5" stroke-linecap="round" />
-  <path d="M 10 42 L 18 42" stroke="#ff5a00" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M 6 18 L 9 18 M 13 18 L 18 18" stroke="url(#logo-particle-gradient)" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M 2 24 L 10 24 M 14 24 L 18 24" stroke="url(#logo-particle-gradient)" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M 8 30 L 12 30 M 16 30 L 18 30" stroke="url(#logo-particle-gradient)" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M 4 36 L 8 36 M 12 36 L 18 36" stroke="url(#logo-particle-gradient)" stroke-width="3.5" stroke-linecap="round" />
+  <path d="M 10 42 L 18 42" stroke="url(#logo-particle-gradient)" stroke-width="3.5" stroke-linecap="round" />
 </svg>

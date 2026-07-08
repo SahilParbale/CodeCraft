@@ -159,7 +159,7 @@ const ServiceDetail = () => {
         <h2 style={{ fontSize: '2rem', color: '#0f172a', fontFamily: "'Playfair Display', serif" }}>Service not found</h2>
         <button 
           onClick={() => navigate('/')}
-          style={{ marginTop: '2rem', padding: '0.8rem 1.5rem', background: '#ea580c', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}
+          style={{ marginTop: '2rem', padding: '0.8rem 1.5rem', background: '#2563eb', color: 'white', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', fontFamily: "'Inter', sans-serif" }}
         >
           Return Home
         </button>
@@ -172,10 +172,10 @@ const ServiceDetail = () => {
       <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 1.5rem' }}>
         
         {/* Header Section */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', marginBottom: '3.5rem' }}>
+        <div className="service-detail-header">
           <div style={{ 
-            background: 'rgba(234, 88, 12, 0.1)', 
-            color: '#ea580c', 
+            background: 'rgba(37, 99, 235, 0.1)', 
+            color: '#2563eb', 
             width: '64px', 
             height: '64px', 
             borderRadius: '16px', 
@@ -225,17 +225,17 @@ const ServiceDetail = () => {
                     top: '5px',
                     width: '16px', 
                     height: '16px', 
-                    background: '#ea580c', 
+                    background: '#2563eb', 
                     border: '3px solid #ffffff',
                     borderRadius: '50%', 
-                    boxShadow: '0 0 0 3px rgba(234, 88, 12, 0.15)',
+                    boxShadow: '0 0 0 3px rgba(37, 99, 235, 0.15)',
                     zIndex: 2
                   }}></div>
 
                   {/* Step Content */}
                   <div>
                     <h3 style={{ fontSize: '1.15rem', fontWeight: '700', color: '#0f172a', marginBottom: '0.35rem', fontFamily: "'Inter', sans-serif", display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <span style={{ color: '#ea580c', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.05em' }}>STEP {index + 1}</span>
+                      <span style={{ color: '#2563eb', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.05em' }}>STEP {index + 1}</span>
                       {step.title}
                     </h3>
                     <p style={{ color: '#64748b', fontSize: '0.95rem', lineHeight: '1.6', fontFamily: "'Inter', sans-serif", margin: 0 }}>
@@ -260,7 +260,7 @@ const ServiceDetail = () => {
           <button 
             onClick={() => navigate('/get-started')}
             style={{
-              background: '#ea580c',
+              background: '#2563eb',
               color: '#ffffff',
               border: 'none',
               borderRadius: '8px',
@@ -275,10 +275,10 @@ const ServiceDetail = () => {
               gap: '0.5rem'
             }}
             onMouseEnter={(e) => {
-              e.target.style.background = '#c2410c';
+              e.target.style.background = '#0369a1';
             }}
             onMouseLeave={(e) => {
-              e.target.style.background = '#ea580c';
+              e.target.style.background = '#2563eb';
             }}
           >
             Start Your Project <ArrowRight size={16} />

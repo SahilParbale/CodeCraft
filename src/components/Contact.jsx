@@ -54,7 +54,7 @@ const Contact = () => {
           
           {/* Left Side - Form (60%) */}
           <div style={{ flex: '1 1 min(100%, 500px)', padding: '2.5rem 2.25rem' }}>
-            <span className="section-tag" style={{ marginBottom: '0.75rem', background: '#fff7ed', border: '1px solid rgba(255,90,0,0.15)' }}>LET'S TALK</span>
+            <span className="section-tag" style={{ marginBottom: '0.75rem', background: '#f0f5ff', border: '1px solid rgba(37, 99, 235, 0.15)', color: 'var(--accent-primary)' }}>LET'S TALK</span>
             <h2 className="section-title" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0f172a' }}>Let's Build Something Amazing Together</h2>
             <p className="section-subtitle" style={{ fontSize: '1rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>
               Have a project in mind? Let's discuss how we can help.
@@ -195,24 +195,12 @@ const Contact = () => {
           </div>
           
           {/* Right Side - Info Box (40% - Compacted Width) */}
-          <div style={{ 
-            flex: '1 1 min(100%, 280px)',
-            maxWidth: '320px', 
-            background: '#fff7ed', 
-            color: '#0f172a', 
-            padding: '2.5rem 1.75rem', 
-            display: 'flex', 
-            flexDirection: 'column',
-            position: 'relative',
-            overflow: 'hidden',
-            borderLeft: '1px solid #fed7aa',
-            fontFamily: "'Outfit', sans-serif"
-          }}>
+          <div className="contact-info-box">
             
             {/* Styled Map Background */}
             <div style={{ position: 'absolute', bottom: '10px', right: '5px', width: '70%', opacity: 0.6, pointerEvents: 'none' }}>
               <svg width="100%" height="auto" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g fill="rgba(255, 90, 0, 0.15)">
+                <g fill="rgba(37, 99, 235, 0.15)">
                   <circle cx="20" cy="40" r="1.5" /><circle cx="40" cy="40" r="1.5" /><circle cx="60" cy="40" r="1.5" />
                   <circle cx="30" cy="50" r="1.5" /><circle cx="50" cy="50" r="1.5" /><circle cx="70" cy="50" r="1.5" /><circle cx="90" cy="50" r="1.5" />
                   <circle cx="80" cy="60" r="1.5" /><circle cx="100" cy="60" r="1.5" /><circle cx="120" cy="60" r="1.5" /><circle cx="140" cy="60" r="1.5" />
@@ -224,8 +212,8 @@ const Contact = () => {
                   <circle cx="180" cy="120" r="1.5" /><circle cx="200" cy="120" r="1.5" />
                   <circle cx="190" cy="130" r="1.5" />
                 </g>
-                <circle cx="180" cy="100" r="5" fill="#ff5a00" />
-                <circle cx="180" cy="100" r="12" stroke="#ff5a00" strokeWidth="1.5" strokeDasharray="3 3" />
+                <circle cx="180" cy="100" r="5" fill="#2563eb" />
+                <circle cx="180" cy="100" r="12" stroke="#2563eb" strokeWidth="1.5" strokeDasharray="3 3" />
               </svg>
             </div>
             
@@ -234,11 +222,11 @@ const Contact = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', flex: 1, position: 'relative', zIndex: 1 }}>
               
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem' }}>
-                <div style={{ width: '40px', height: '40px', background: 'rgba(255, 90, 0, 0.1)', color: 'var(--accent-primary)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '40px', height: '40px', background: 'rgba(37, 99, 235, 0.1)', color: 'var(--accent-primary)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Mail size={20} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.85rem', color: '#c2410c', marginBottom: '0.25rem', fontWeight: '600' }}>Email</div>
+                  <div style={{ fontSize: '0.85rem', color: '#1d4ed8', marginBottom: '0.25rem', fontWeight: '600' }}>Email</div>
                   <div style={{ fontSize: '1.05rem', fontWeight: '500', color: '#0f172a', letterSpacing: '0.01em' }}>
                     <a 
                       href="mailto:info@codecraft.net.in" 
@@ -253,11 +241,11 @@ const Contact = () => {
               </div>
               
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem' }}>
-                <div style={{ width: '40px', height: '40px', background: 'rgba(255, 90, 0, 0.1)', color: 'var(--accent-primary)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '40px', height: '40px', background: 'rgba(37, 99, 235, 0.1)', color: 'var(--accent-primary)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Phone size={20} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.85rem', color: '#c2410c', marginBottom: '0.25rem', fontWeight: '600' }}>Phone</div>
+                  <div style={{ fontSize: '0.85rem', color: '#1d4ed8', marginBottom: '0.25rem', fontWeight: '600' }}>Phone</div>
                   <div style={{ fontSize: '1.05rem', fontWeight: '500', lineHeight: '1.6', color: '#0f172a', letterSpacing: '0.02em' }}>
                     <a 
                       href="tel:+917058731515" 
@@ -280,11 +268,11 @@ const Contact = () => {
               </div>
               
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem' }}>
-                <div style={{ width: '40px', height: '40px', background: 'rgba(255, 90, 0, 0.1)', color: 'var(--accent-primary)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: '40px', height: '40px', background: 'rgba(37, 99, 235, 0.1)', color: 'var(--accent-primary)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <div style={{ fontSize: '0.85rem', color: '#c2410c', marginBottom: '0.25rem', fontWeight: '600' }}>Address</div>
+                  <div style={{ fontSize: '0.85rem', color: '#1d4ed8', marginBottom: '0.25rem', fontWeight: '600' }}>Address</div>
                   <div style={{ fontSize: '1.05rem', fontWeight: '500', lineHeight: '1.6', color: '#0f172a' }}>
                     Building: Vinayak<br/>
                     Flt No: 1/13 Ground floor<br/>

@@ -17,7 +17,7 @@ const CustomSelect = ({ value, onChange, options, placeholder }) => {
         style={{
           width: '100%',
           background: '#f8fafc',
-          border: isOpen ? '1.5px solid #ea580c' : '1.5px solid #f1f5f9',
+          border: isOpen ? '1.5px solid #2563eb' : '1.5px solid #f1f5f9',
           borderRadius: '8px',
           padding: '0.85rem 1rem',
           fontSize: '0.9rem',
@@ -28,7 +28,7 @@ const CustomSelect = ({ value, onChange, options, placeholder }) => {
           justifyContent: 'space-between',
           alignItems: 'center',
           transition: 'all 0.2s ease',
-          boxShadow: isOpen ? '0 0 0 3px rgba(234, 88, 12, 0.1)' : 'none'
+          boxShadow: isOpen ? '0 0 0 3px rgba(37, 99, 235, 0.1)' : 'none'
         }}
       >
         <span style={{ userSelect: 'none' }}>{selectedOption ? selectedOption.label : placeholder}</span>
@@ -75,8 +75,8 @@ const CustomSelect = ({ value, onChange, options, placeholder }) => {
                 fontSize: '0.9rem',
                 fontFamily: "'Inter', sans-serif",
                 cursor: 'pointer',
-                color: opt.value === value ? '#ea580c' : '#334155',
-                background: opt.value === value ? '#fff7ed' : 'transparent',
+                color: opt.value === value ? '#2563eb' : '#334155',
+                background: opt.value === value ? '#f0f5ff' : 'transparent',
                 fontWeight: opt.value === value ? '600' : '400',
                 borderRadius: '8px',
                 transition: 'all 0.15s ease',
@@ -210,21 +210,21 @@ const GetStartedForm = () => {
           {new URLSearchParams(location.search).get('product') && (
             <div style={{
               display: 'inline-block',
-              background: 'rgba(234, 88, 12, 0.08)',
-              color: '#ea580c',
+              background: 'rgba(37, 99, 235, 0.08)',
+              color: '#2563eb',
               fontSize: '0.8rem',
               fontWeight: '700',
               padding: '0.35rem 1rem',
               borderRadius: '9999px',
               marginBottom: '0.75rem',
-              border: '1px solid rgba(234, 88, 12, 0.15)',
+              border: '1px solid rgba(37, 99, 235, 0.15)',
               fontFamily: "'Inter', sans-serif"
             }}>
               Demo Request: CodeCraft {new URLSearchParams(location.search).get('product')}
             </div>
           )}
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '2.5rem', fontWeight: '700', color: '#0f172a', marginBottom: '0.5rem' }}>
-            Let's build something <span style={{ color: '#ea580c' }}>great.</span>
+            Let's build something <span style={{ color: '#2563eb' }}>great.</span>
           </h1>
           <p style={{ color: '#64748b', fontSize: '1rem', fontFamily: "'Inter', sans-serif" }}>
             {new URLSearchParams(location.search).get('product')
@@ -235,7 +235,7 @@ const GetStartedForm = () => {
 
         {isSubmitted ? (
           <div style={{ textAlign: 'center', padding: '2rem 0', animation: 'fadeIn 0.5s ease' }}>
-            <div style={{ width: '64px', height: '64px', background: 'rgba(234, 88, 12, 0.1)', color: '#ea580c', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontSize: '2rem' }}>
+            <div style={{ width: '64px', height: '64px', background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', fontSize: '2rem' }}>
               ✓
             </div>
             <h3 style={{ fontSize: '1.5rem', fontWeight: '700', color: '#0f172a', marginBottom: '0.5rem', fontFamily: "'Inter', sans-serif" }}>Request Received!</h3>
@@ -328,7 +328,7 @@ const GetStartedForm = () => {
               type="submit"
               className="submit-btn-hover"
               style={{
-                background: '#ea580c',
+                background: '#2563eb',
                 color: '#ffffff',
                 border: 'none',
                 borderRadius: '8px',
@@ -339,20 +339,20 @@ const GetStartedForm = () => {
                 cursor: 'pointer',
                 marginTop: '0.5rem',
                 transition: 'all 0.2s ease',
-                boxShadow: '0 4px 14px rgba(234, 88, 12, 0.25)'
+                boxShadow: '0 4px 14px rgba(37, 99, 235, 0.25)'
               }}
             >
               Submit Request
             </button>
             <style>{`
               .custom-input:focus {
-                border-color: #ea580c !important;
-                box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1) !important;
+                border-color: #2563eb !important;
+                box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
               }
               .submit-btn-hover:hover {
-                background: #c2410c !important;
+                background: #0369a1 !important;
                 transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(234, 88, 12, 0.3) !important;
+                box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3) !important;
               }
               @keyframes fadeIn {
                 from { opacity: 0; transform: translateY(10px); }
