@@ -92,8 +92,9 @@ const Navbar = () => {
   ];
 
   return (
+    <>
     <header className="header" style={{
-      position: 'sticky',
+      position: 'fixed',
       top: 0,
       width: '100%',
       height: '90px',
@@ -256,7 +257,6 @@ const Navbar = () => {
         )}
       </div>
       
-      {/* Menu animation keyframes injected */}
       <style>{`
         @keyframes slideDownMenu {
           from { opacity: 0; transform: translateY(-10px); }
@@ -264,6 +264,9 @@ const Navbar = () => {
         }
       `}</style>
     </header>
+    {/* Spacer to maintain document flow behind fixed navbar */}
+    <div style={{ height: '90px', width: '100%', flexShrink: 0 }}></div>
+    </>
   );
 };
 
