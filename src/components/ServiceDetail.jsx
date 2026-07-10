@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Code2, Globe, Smartphone, Layout, Cloud, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Code2, Globe, Smartphone, Layout, Bot, Cloud, ShieldCheck, ArrowRight } from 'lucide-react';
 
 const serviceData = {
   'custom-software-development': {
@@ -72,26 +72,26 @@ const serviceData = {
       }
     ]
   },
-  'ui-ux-design': {
-    title: 'UI/UX Design',
-    icon: <Layout size={32} />,
-    description: "Crafting intuitive user interfaces (UI) and user experiences (UX). This involves user research, wireframing, and visual design to ensure the software is user-friendly and visually appealing.",
+  'ai-automation': {
+    title: 'AI Automation Services',
+    icon: <Bot size={32} />,
+    description: "Integrating powerful artificial intelligence agents and Large Language Models (LLMs) to automate repetitive workflows, parse unstructured data, and intelligently handle customer support around the clock.",
     workflow: [
       {
-        title: 'User Research & Analysis',
-        desc: 'We study your target demographic to understand their behaviors, pain points, and expectations.'
+        title: 'Workflow Assessment',
+        desc: 'We analyze your current operational bottlenecks to identify highly repetitive tasks perfect for AI automation.'
       },
       {
-        title: 'Wireframing & Prototyping',
-        desc: 'We create low-fidelity wireframes to map out user journeys, followed by interactive prototypes to test usability.'
+        title: 'Custom Agent Development',
+        desc: 'We build tailored AI agents using tools like LangChain or AutoGen, connecting them securely to your proprietary data.'
       },
       {
-        title: 'Visual Design',
-        desc: 'We apply typography, color palettes, and brand guidelines to create a stunning, cohesive interface.'
+        title: 'System Integration',
+        desc: 'We seamlessly connect the AI models directly into your existing CRM, ERP, or communication platforms via APIs.'
       },
       {
-        title: 'Usability Testing',
-        desc: 'We validate the designs with real users to ensure the interface is frictionless, intuitive, and conversion-optimized.'
+        title: 'Deployment & Monitoring',
+        desc: 'We deploy the solutions in a secure environment and monitor their accuracy, optimizing prompts for the best output.'
       }
     ]
   },

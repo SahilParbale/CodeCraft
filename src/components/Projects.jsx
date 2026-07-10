@@ -29,10 +29,10 @@ const Projects = () => {
         {/* Projects Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', width: '100%', marginBottom: '3rem' }}>
           
-          {/* Card 1: Nagarsevak Management */}
+          {/* Card 1: GovTech ERP System */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden' }}>
-              <img src={nagarsevakImg} alt="Nagarsevak Management" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={nagarsevakImg} alt="GovTech ERP System" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <span className="project-tag-pill">Local Governance</span>
             </div>
             
@@ -45,7 +45,7 @@ const Projects = () => {
                 <span className="project-tech-badge-light project-tech-badge-blue">GovTech</span>
               </div>
               
-              <h3 className="project-detail-title">Nagarsevak Management</h3>
+              <h3 className="project-detail-title">GovTech ERP System</h3>
               <p className="project-detail-text" style={{ flex: 1 }}>
                 A modern administrative portal helping local representatives digitize ward operations, resolve citizen complaints, and track budgets securely.
               </p>
@@ -59,10 +59,10 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Card 2: Voter Management */}
+          {/* Card 2: Election Management System */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden' }}>
-              <img src={voterImg} alt="Voter Management" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={voterImg} alt="Election Management System" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <span className="project-tag-pill">Political Tech</span>
             </div>
             
@@ -75,7 +75,7 @@ const Projects = () => {
                 <span className="project-tech-badge-light project-tech-badge-blue">Outreach</span>
               </div>
               
-              <h3 className="project-detail-title">Voter Management</h3>
+              <h3 className="project-detail-title">Election Management System</h3>
               <p className="project-detail-text" style={{ flex: 1 }}>
                 Advanced voter analytics platform enabling deep demographic insights, interactive booth-level mapping, and targeted campaign outreach.
               </p>
@@ -89,10 +89,10 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Card 3: Builder Management */}
+          {/* Card 3: Build Division AI */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden', background: '#e2e8f0' }}>
-              <img src={builderImg} alt="Builder Management" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+              <img src={builderImg} alt="Build Division AI" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
               <span className="project-tag-pill">Real Estate</span>
             </div>
             
@@ -106,7 +106,7 @@ const Projects = () => {
               </div>
               
               <h3 className="project-detail-title" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                Builder Management
+                Build Division AI
                 <span style={{
                   fontSize: '0.65rem',
                   fontWeight: '700',

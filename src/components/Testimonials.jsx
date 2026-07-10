@@ -78,16 +78,21 @@ const Testimonials = () => {
               
               {/* Profile Details */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: 'auto' }}>
-                <img 
-                  src={rev.avatarUrl} 
-                  alt={rev.name} 
-                  style={{
-                    width: '44px',
-                    height: '44px',
-                    borderRadius: '50%',
-                    objectFit: 'cover'
-                  }}
-                />
+                <div style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #2563eb, #00d2ff)',
+                  color: 'white',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: '700',
+                  fontSize: '1.1rem',
+                  letterSpacing: '1px'
+                }}>
+                  {rev.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase()}
+                </div>
                 <div>
                   <div style={{ fontWeight: '700', fontSize: '0.95rem', color: '#0f172a' }}>{rev.name}</div>
                   <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{rev.role}</div>

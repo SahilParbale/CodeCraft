@@ -54,9 +54,9 @@ const Footer = () => {
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1.25rem', color: '#f1f5f9' }}>Products</h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Nagarsevak Management</a></li>
-              <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Voter Management</a></li>
-              <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Builder Management</a></li>
+              <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>GovTech ERP System</a></li>
+              <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Election Management System</a></li>
+              <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Build Division AI</a></li>
               <li><a href="#products" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>GimBooks</a></li>
             </ul>
           </div>
@@ -100,13 +100,13 @@ const Footer = () => {
               </li>
               <li>
                 <a 
-                  href="/service/ui-ux-design" 
-                  onClick={(e) => { e.preventDefault(); navigate('/service/ui-ux-design'); }}
+                  href="/service/ai-automation" 
+                  onClick={(e) => { e.preventDefault(); navigate('/service/ai-automation'); }}
                   style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} 
                   onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} 
                   onMouseLeave={(e) => e.target.style.color = '#94a3b8'}
                 >
-                  UI/UX Design
+                  AI Automation Services
                 </a>
               </li>
               <li>
@@ -140,7 +140,6 @@ const Footer = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>About Us</a></li>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Our Process</a></li>
-              <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Careers</a></li>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Blog</a></li>
             </ul>
           </div>

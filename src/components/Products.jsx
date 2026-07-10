@@ -30,161 +30,156 @@ const Products = () => {
   const productsData = [
     {
       id: 'nagarsevak',
-      name: 'Nagarsevak Management',
-      description: 'The ultimate all-in-one ERP and workflow automation system designed exclusively for modern civic leaders.',
-      features: [
-        'Smart Automation & AI Integration',
-        'Real-time Tracking & Alerts',
-        'Data Driven Insights & Analytics',
-        '100% Mobile Responsive'
-      ],
+      name: 'GovTech ERP System',
+      category: 'Political Management',
+      platform: 'Web / Cloud',
+      description: 'A complete political management platform to streamline voter campaigns, office operations, and analytics.',
       image: nagarsevakImg,
-      icon: <Users size={20} />,
-      accentColor: '#2563eb',
-      bgLight: '#f0f5ff'
-    },
-    {
-      id: 'voterpro',
-      name: 'Voter Management',
-      description: 'Smart voter data management with verification, tracking & analytics.',
-      features: [
-        'Voter data management',
-        'Booth & area mapping',
-        'Verification & deduplication',
-        'Advanced reporting system'
-      ],
-      image: voterImg,
-      icon: <Users size={20} />,
-      accentColor: '#2563eb',
-      bgLight: '#f0f5ff'
+      features: ['Smart Automation & AI', 'Real-time Tracking', 'Data Analytics', 'Mobile Responsive'],
+      comingSoon: false
     },
     {
       id: 'buildermanager',
-      name: 'Builder Management',
-      description: 'Project & builder management system with document tracking, approvals & compliance.',
-      features: [
-        'Project & builder registration',
-        'Document & approval tracking',
-        'Compliance & audit logs',
-        'Real-time status updates'
-      ],
+      name: 'Build Division AI',
+      category: 'AI Construction Technology',
+      platform: 'Web / AR / VR',
+      description: 'An AI-powered platform transforming 2D architectural drawings into interactive 3D, AR, and VR experiences.',
       image: builderImg,
-      icon: <Briefcase size={20} />,
-      accentColor: '#2563eb',
-      bgLight: '#f0f5ff',
-      comingSoon: true
+      features: ['Project Registration', 'Document Tracking', 'Compliance Logs', 'Real-time Updates'],
+      comingSoon: false
+    },
+    {
+      id: 'voterpro',
+      name: 'Election Management System',
+      category: 'Electoral Data Analytics',
+      platform: 'Web / App',
+      description: 'Smart voter data management with verification, tracking, and deep demographic analytics.',
+      image: voterImg,
+      features: ['Voter data management', 'Booth & area mapping', 'Verification system', 'Advanced reporting'],
+      comingSoon: false
     },
     {
       id: 'gimbooks',
-      name: 'GimBooks (Accounting)',
-      description: 'Smart accounting & bookkeeping solution for businesses of every size.',
-      features: [
-        'Income & expense tracking',
-        'Invoice & billing management',
-        'Financial reports',
-        'Multi-user access'
-      ],
+      name: 'GimBooks',
+      category: 'Financial Tech',
+      platform: 'Web / Cloud',
+      description: 'Smart accounting and bookkeeping solution for modern businesses of every size.',
       image: gimbooksImg,
-      icon: <Activity size={20} />,
-      accentColor: '#2563eb',
-      bgLight: '#f0f5ff'
+      features: ['Income tracking', 'Invoice management', 'Financial reports', 'Multi-user access'],
+      comingSoon: false
+    },
+    {
+      id: 'ai-interview',
+      name: 'AI Interview',
+      category: 'HR Tech',
+      platform: 'Web / AI',
+      description: 'Automated AI-driven interview assessments to streamline hiring and evaluate candidate skills accurately.',
+      image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80',
+      features: ['Automated Screening', 'Skill Evaluation', 'Bias Reduction', 'Detailed Reports'],
+      comingSoon: true
+    },
+    {
+      id: 'ai-counselling',
+      name: 'AI Counselling',
+      category: 'Mental Health Tech',
+      platform: 'Mobile / AI',
+      description: 'Intelligent empathetic AI bots providing personalized 24/7 counseling and guidance.',
+      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80',
+      features: ['24/7 Availability', 'Empathetic AI', 'Private Sessions', 'Mood Tracking'],
+      comingSoon: true
+    },
+    {
+      id: 'government-erp',
+      name: 'Government ERP',
+      category: 'Public Sector Tech',
+      platform: 'Web / Cloud',
+      description: 'Large scale enterprise resource planning engineered securely for government administrative departments.',
+      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+      features: ['Secure Architecture', 'Gov Scalability', 'Compliance Ready', 'Audit Trails'],
+      comingSoon: true
+    },
+    {
+      id: 'custom-erp',
+      name: 'Custom ERP',
+      category: 'Enterprise Tech',
+      platform: 'Web / Cloud',
+      description: 'Fully tailored, scalable ERP architecture designed from the ground up for massive corporate operations.',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      features: ['Custom Workflows', 'Legacy Integration', 'High Scalability', 'Advanced Analytics'],
+      comingSoon: true
     }
   ];
 
   return (
-    <section id="products" className="section bg-secondary" style={{ background: 'var(--bg-secondary)', padding: '4.5rem 0' }}>
+    <section id="products" className="section" style={{ background: '#f8fafc', padding: '0 0 4.5rem 0' }}>
+      
       <div className="container">
-        
-        {/* Header */}
-        <div className="section-header">
-          <span className="section-tag">OUR PRODUCTS</span>
+        <div className="section-header" style={{ paddingTop: '4.5rem', marginBottom: '3rem' }}>
+          <span className="section-tag" style={{ background: '#f0f5ff', color: 'var(--accent-primary)', border: '1px solid rgba(37, 99, 235, 0.15)' }}>OUR PRODUCTS</span>
           <h2 className="section-title">Powerful Products. Real Impact.</h2>
           <p className="section-subtitle">
             Explore our ready-to-deploy platforms designed to simplify operations, boost efficiency and deliver measurable results.
           </p>
         </div>
+      </div>
 
-        {/* 4-Column Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '1.5rem',
-          marginTop: '2rem'
-        }}>
-          {productsData.map((prod, idx) => (
-            <div 
-              key={prod.id} 
-              className="glass-card animate-fade-up" 
-              onClick={() => {
-                if (!prod.comingSoon) {
-                  navigate('/product/' + prod.id);
-                }
-              }}
-              style={{ 
-                padding: '1.5rem', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                animationDelay: `${idx * 0.1}s`, 
-                background: 'white',
-                cursor: prod.comingSoon ? 'default' : 'pointer'
-              }}
-            >
-              
-              {/* Image Thumbnail */}
-              <div style={{ width: '100%', height: '140px', borderRadius: '8px', overflow: 'hidden', marginBottom: '1.25rem', border: '1px solid var(--border-color)' }}>
-                <img src={prod.image} alt={prod.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
-              
-              {/* Title Area */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
-                <div style={{ 
-                  background: prod.accentColor, 
-                  color: 'white', 
-                  width: '36px', height: '36px', 
-                  borderRadius: '8px', 
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 
-                }}>
-                  {prod.icon}
+      {/* 2-Column Editorial Grid */}
+      <div className="editorial-grid">
+        {productsData.map((prod, idx) => (
+          <div 
+            key={prod.id} 
+            className="editorial-card animate-fade-up"
+            onClick={() => {
+              if (!prod.comingSoon) {
+                navigate('/product/' + prod.id);
+              }
+            }}
+            style={{ 
+              animationDelay: `${idx * 0.1}s`,
+              cursor: prod.comingSoon ? 'default' : 'pointer'
+            }}
+          >
+            {/* Header: Title Left, Meta Right */}
+            <div className="ec-header">
+              <h3 className="ec-title">{prod.name}</h3>
+              <div className="ec-meta">
+                <div className="ec-badge category-badge">
+                  <span className="badge-label">Category:</span> {prod.category}
                 </div>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: '800', lineHeight: '1.2', display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                  {prod.name}
-                  {prod.comingSoon && (
-                    <span style={{
-                      fontSize: '0.65rem',
-                      fontWeight: '800',
-                      padding: '0.2rem 0.5rem',
-                      background: '#f0f5ff',
-                      color: 'var(--accent-primary)',
-                      border: '1px solid rgba(37, 99, 235, 0.2)',
-                      borderRadius: '999px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em'
-                    }}>
-                      Coming Soon
-                    </span>
-                  )}
-                </h3>
+                <div className="ec-badge platform-badge">
+                  <span className="badge-label">Platform:</span> {prod.platform}
+                </div>
+              </div>
+            </div>
+            
+            {/* Image Thumbnail */}
+            <div className="ec-image-container">
+              <img src={prod.image} alt={prod.name} className="ec-image" />
+              {prod.comingSoon && (
+                <div className="ec-coming-soon-overlay">
+                  <span className="ec-coming-soon-badge">COMING SOON</span>
+                </div>
+              )}
+            </div>
+            
+            {/* Footer: Description Left, Button Right */}
+            <div className="ec-footer">
+              <div className="ec-footer-content">
+                <p className="ec-description">{prod.description}</p>
+                
+                {/* Compact Features Grid */}
+                <div className="ec-features">
+                  {prod.features.map((feat, i) => (
+                    <div key={i} className="ec-feature-item">
+                      <span className="ec-feature-dot"></span> {feat}
+                    </div>
+                  ))}
+                </div>
               </div>
               
-              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1.25rem', lineHeight: '1.5' }}>
-                {prod.description}
-              </p>
-              
-              {/* Features List */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.5rem', flex: 1 }}>
-                {prod.features.map((feat, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
-                    <Check size={14} style={{ color: prod.accentColor, marginTop: '2px', flexShrink: 0 }} strokeWidth={3} />
-                    <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>{feat}</span>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Action Buttons */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
+              <div className="ec-actions">
                 <button 
-                  className="btn btn-secondary" 
-                  style={{ padding: '0.6rem 0', fontSize: '0.8rem', opacity: prod.comingSoon ? 0.5 : 1, cursor: prod.comingSoon ? 'default' : 'pointer' }}
+                  className="ec-btn ec-btn-outline" 
                   onClick={(e) => {
                     e.stopPropagation();
                     if (!prod.comingSoon) {
@@ -193,11 +188,10 @@ const Products = () => {
                   }}
                   disabled={prod.comingSoon}
                 >
-                  Product Details
+                  View Details
                 </button>
                 <button 
-                  className="btn btn-primary" 
-                  style={{ padding: '0.6rem 0', fontSize: '0.8rem', background: prod.accentColor, boxShadow: `0 4px 14px ${prod.accentColor}33`, opacity: prod.comingSoon ? 0.5 : 1, cursor: prod.comingSoon ? 'default' : 'pointer' }}
+                  className="ec-btn ec-btn-primary" 
                   onClick={(e) => {
                     e.stopPropagation();
                     if (!prod.comingSoon) {
@@ -206,14 +200,226 @@ const Products = () => {
                   }}
                   disabled={prod.comingSoon}
                 >
-                  Demo &rarr;
+                  Get Demo &rarr;
                 </button>
               </div>
-              
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+
+      <style>{`
+        .editorial-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 2rem;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+        }
+        .editorial-card {
+          padding: 1.5rem;
+          border: 1px solid #e2e8f0;
+          border-radius: 16px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+          display: flex;
+          flex-direction: column;
+          background: #ffffff;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .editorial-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+          border-color: rgba(37, 99, 235, 0.3);
+        }
+        
+        .ec-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 1rem;
+        }
+        .ec-title {
+          font-size: 1rem;
+          font-weight: 700;
+          color: #0f172a;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          max-width: 50%;
+        }
+        .ec-meta {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          align-items: flex-end;
+        }
+        .ec-badge {
+          font-size: 0.65rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          padding: 0.35rem 0.75rem;
+          border-radius: 99px;
+        }
+        .category-badge {
+          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+          color: #1d4ed8;
+          border: 1px solid #bfdbfe;
+        }
+        .platform-badge {
+          background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+          color: #a21caf;
+          border: 1px solid #f5d0fe;
+        }
+        .badge-label {
+          opacity: 0.6;
+          margin-right: 0.3rem;
+          font-weight: 700;
+        }
+        
+        .ec-image-container {
+          position: relative;
+          width: 100%;
+          border: 1px solid #e2e8f0;
+          overflow: hidden;
+          background: #f8fafc;
+          margin-bottom: 1rem;
+          border-radius: 8px;
+        }
+        .ec-image {
+          width: 100%;
+          max-height: 140px;
+          display: block;
+          object-fit: cover;
+        }
+        
+        .ec-coming-soon-overlay {
+          position: absolute;
+          inset: 0;
+          background: rgba(255,255,255,0.7);
+          backdrop-filter: blur(4px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .ec-coming-soon-badge {
+          background: #0f172a;
+          color: white;
+          padding: 0.5rem 1rem;
+          font-weight: 700;
+          font-size: 0.9rem;
+          letter-spacing: 0.1em;
+        }
+        
+        .ec-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          gap: 1rem;
+          margin-top: auto;
+        }
+        .ec-footer-content {
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          flex: 1;
+        }
+        .ec-description {
+          font-size: 0.85rem;
+          color: #334155;
+          line-height: 1.5;
+          font-weight: 500;
+          margin: 0;
+        }
+        
+        .ec-features {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 0.4rem 1rem;
+        }
+        .ec-feature-item {
+          font-size: 0.72rem;
+          color: #475569;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .ec-feature-dot {
+          width: 4px;
+          height: 4px;
+          background: #2563eb;
+          border-radius: 50%;
+          flex-shrink: 0;
+        }
+        
+        .ec-actions {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          min-width: 120px;
+        }
+        .ec-btn {
+          font-family: inherit;
+          font-size: 0.75rem;
+          font-weight: 600;
+          padding: 0.5rem 0.75rem;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          text-align: center;
+          width: 100%;
+          border: none;
+        }
+        .ec-btn:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+        .ec-btn-primary {
+          background: #2563eb;
+          color: white;
+          box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+        }
+        .ec-btn-primary:hover:not(:disabled) {
+          background: #1d4ed8;
+          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+          transform: translateY(-1px);
+        }
+        .ec-btn-outline {
+          background: transparent;
+          color: #334155;
+          border: 1px solid #cbd5e1;
+        }
+        .ec-btn-outline:hover:not(:disabled) {
+          background: #f8fafc;
+          border-color: #94a3b8;
+        }
+
+        @media (max-width: 1024px) {
+          .editorial-card {
+            padding: 3rem 2rem;
+          }
+        }
+        @media (max-width: 768px) {
+          .editorial-grid {
+            grid-template-columns: 1fr;
+          }
+          .ec-header {
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+          .ec-title {
+            max-width: 100%;
+          }
+          .ec-meta {
+            text-align: left;
+          }
+        }
+      `}</style>
+
 
       {activeSandbox && (
         <SandboxModal 

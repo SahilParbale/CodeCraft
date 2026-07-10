@@ -1,5 +1,5 @@
 import React from 'react';
-import { GitBranch, Globe, Smartphone, Layout, Cloud, Search, ArrowRight } from 'lucide-react';
+import { GitBranch, Globe, Smartphone, Bot, Cloud, Search, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
@@ -25,10 +25,10 @@ const Services = () => {
       description: 'Cross-platform mobile apps for iOS and Android that engage users and drive business results.'
     },
     {
-      id: 'ui-ux-design',
-      icon: <Layout size={22} />,
-      title: 'UI/UX Design',
-      description: 'Beautiful, intuitive and user-centered designs that enhance engagement and create lasting impressions.'
+      id: 'ai-automation',
+      icon: <Bot size={22} />,
+      title: 'AI Automation Services',
+      description: 'Leverage cutting-edge AI agents, LLMs, and workflow automation to dramatically reduce costs and accelerate business operations.'
     },
     {
       id: 'cloud-devops',

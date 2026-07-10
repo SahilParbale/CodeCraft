@@ -12,8 +12,8 @@ import gimbooksImg from '../assets/gimbooks_dashboard.png';
 // Dynamic product data to power the page
 const productData = {
   nagarsevak: {
-    name: 'Nagarsevak Management',
-    description: 'The ultimate all-in-one ERP and workflow automation system designed exclusively for modern civic leaders. Connect with citizens, manage your office, and track local development effortlessly.',
+    name: 'GovTech ERP System',
+    description: 'The ultimate all-in-one GovTech ERP and workflow automation system designed exclusively for Ministers, MLAs, and Corporators to streamline civic management. Connect with citizens, manage your office, and track local development effortlessly.',
     tags: [
       { icon: <Zap size={14} />, text: 'Smart Automation & AI Integration' },
       { icon: <Clock size={14} />, text: 'Real-time Tracking & Alerts' },
@@ -30,7 +30,7 @@ const productData = {
         desc: 'Citizens can raise complaints; offices can auto-route, assign, and track them to resolution in real-time.'
       },
       {
-        title: 'Advanced Voter Management',
+        title: 'Advanced Election Management System',
         icon: <Users size={24} />,
         desc: 'Maintain exhaustive voter databases, search profiles rapidly, and generate detailed PDF voter slips and lists.'
       },
@@ -73,10 +73,11 @@ const productData = {
     versions: [
       {
         id: 'nagarsevak',
-        version: 'Nagarsevak',
+        version: 'GovTech ERP',
+        title: 'Comprehensive Management',
         label: 'Local level',
         status: 'Available',
-        description: 'The complete management system tailored specifically for Nagarsevaks to handle local ward issues, citizen databases, and daily administrative tasks.',
+        description: 'The complete ERP system tailored specifically for Ministers, MLAs, and Corporators to handle local ward issues, citizen databases, and daily administrative tasks.',
         tiers: {
           Basic: {
             description: 'Perfect for newly elected leaders getting started with digital ward management.',
@@ -299,7 +300,7 @@ const productData = {
     ]
   },
   voterpro: {
-    name: 'Voter Management',
+    name: 'Election Management System',
     description: 'Smart voter data management with verification, tracking, and deep demographic analytics. Empower your campaign teams to organize voter rolls, track volunteers, and manage voter interactions in real-time.',
     tags: [
       { icon: <Users size={14} />, text: 'Electoral Roll Management' },
@@ -498,7 +499,7 @@ const productData = {
     ]
   },
   gimbooks: {
-    name: 'GimBooks (Accounting)',
+    name: 'GimBooks',
     description: 'Smart accounting, invoicing, and bookkeeping solution designed for modern businesses. Streamline billing, track expenses, manage inventory, and generate tax-compliant financial reports in seconds.',
     tags: [
       { icon: <FileText size={14} />, text: 'Invoicing & Billing' },
@@ -809,21 +810,6 @@ const ProductDetail = () => {
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
                 Request Demo <ArrowRight size={16} />
-              </button>
-              <button 
-                style={{
-                  background: 'white', color: '#0f172a', border: '1px solid #e2e8f0',
-                  padding: '0.85rem 2rem', borderRadius: '999px',
-                  fontSize: '0.95rem', fontWeight: '700',
-                  display: 'flex', alignItems: 'center', gap: '0.5rem',
-                  cursor: 'pointer',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.02)',
-                  transition: 'background 0.2s'
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.background = '#f8fafc'}
-                onMouseLeave={(e) => e.currentTarget.style.background = 'white'}
-              >
-                Download Brochure <Download size={16} />
               </button>
             </div>
           </div>
