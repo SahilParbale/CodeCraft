@@ -7,19 +7,15 @@ const Footer = () => {
   const navigate = useNavigate();
   return (
     <footer style={{ background: '#090d16', color: '#f8fafc', borderTop: '1px solid rgba(255,255,255,0.05)', fontFamily: "'Inter', sans-serif" }}>
-      <div className="container" style={{ padding: '2rem 0 1.5rem 0' }}>
+      <div className="container" style={{ paddingTop: '3rem', paddingBottom: '2rem' }}>
         
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-          gap: '1.5rem'
-        }}>
+        <div className="footer-main-grid">
           
           {/* Column 1: Brand Info */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', gridColumn: 'span 2' }}>
+          <div className="footer-brand-col" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {/* Logo */}
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Logo scale={0.52} dark={true} />
+              <Logo scale={0.75} dark={true} />
             </div>
             
             <p style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: '1.6', maxWidth: '280px', margin: 0 }}>
@@ -145,7 +141,7 @@ const Footer = () => {
           </div>
 
           {/* Column 5: Contact Info */}
-          <div>
+          <div className="footer-contact-col">
             <h4 style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1.25rem', color: '#f1f5f9' }}>Contact</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               {/* Phone */}

@@ -1,3 +1,13 @@
+/* Root layout constrains */
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 /* Background Grid Lines & Scanline Animation */
 .bg-grid-lines {
   position: absolute;
@@ -1442,4 +1452,21 @@ main {
   }
 }
 
+/* Footer Responsive Layout */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: 2rem 1.5rem;
+}
 
+@media (max-width: 1024px) {
+  .footer-main-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  .footer-brand-col {
+    grid-column: 1 / -1;
+  }
+  .footer-contact-col {
+    grid-column: 1 / -1;
+  }
+}
