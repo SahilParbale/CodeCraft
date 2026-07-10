@@ -30,7 +30,7 @@ const Products = () => {
   const productsData = [
     {
       id: 'nagarsevak',
-      name: 'GovTech ERP System',
+      name: 'Krishnaniti ERP System',
       category: 'Political Management',
       platform: 'Web / Cloud',
       description: 'A complete political management platform to streamline voter campaigns, office operations, and analytics.',
@@ -123,89 +123,105 @@ const Products = () => {
         </div>
       </div>
 
-      {/* 2-Column Editorial Grid */}
+      {/* 2-Column Product Split Grid */}
       <div className="editorial-grid">
-        {productsData.map((prod, idx) => (
-          <div 
-            key={prod.id} 
-            className="editorial-card animate-fade-up"
-            onClick={() => {
-              if (!prod.comingSoon) {
-                navigate('/product/' + prod.id);
-              }
-            }}
-            style={{ 
-              animationDelay: `${idx * 0.1}s`,
-              cursor: prod.comingSoon ? 'default' : 'pointer'
-            }}
-          >
-            {/* Header: Title Left, Meta Right */}
-            <div className="ec-header">
-              <h3 className="ec-title">{prod.name}</h3>
-              <div className="ec-meta">
-                <div className="ec-badge category-badge">
-                  <span className="badge-label">Category:</span> {prod.category}
-                </div>
-                <div className="ec-badge platform-badge">
-                  <span className="badge-label">Platform:</span> {prod.platform}
-                </div>
+        {productsData.map((prod, idx) => {
+          // Dynamic icon logic for the top 4 to match colors in screenshot
+          let IconComponent = Briefcase;
+          let iconColor = '#2563eb';
+          let iconBg = '#eff6ff';
+          
+          if (idx === 1) { IconComponent = Monitor; iconColor = '#9333ea'; iconBg = '#faf5ff'; }
+          else if (idx === 2) { IconComponent = Users; iconColor = '#10b981'; iconBg = '#f0fdf4'; }
+          else if (idx === 3) { IconComponent = Activity; iconColor = '#ea580c'; iconBg = '#fff7ed'; }
+          else if (idx > 3) { IconComponent = HardDrive; iconColor = '#64748b'; iconBg = '#f8fafc'; }
+
+          return (
+            <div 
+              key={prod.id} 
+              className="product-split-card animate-fade-up"
+              onClick={() => {
+                if (!prod.comingSoon) {
+                  navigate('/product/' + prod.id);
+                }
+              }}
+              style={{ 
+                animationDelay: `${idx * 0.1}s`,
+                cursor: prod.comingSoon ? 'default' : 'pointer'
+              }}
+            >
+              {/* Left Side: Image */}
+              <div className="psc-image-side">
+                <img src={prod.image} alt={prod.name} className="psc-image" />
+                {prod.comingSoon && (
+                  <div className="ec-coming-soon-overlay">
+                    <span className="ec-coming-soon-badge">COMING SOON</span>
+                  </div>
+                )}
               </div>
-            </div>
-            
-            {/* Image Thumbnail */}
-            <div className="ec-image-container">
-              <img src={prod.image} alt={prod.name} className="ec-image" />
-              {prod.comingSoon && (
-                <div className="ec-coming-soon-overlay">
-                  <span className="ec-coming-soon-badge">COMING SOON</span>
-                </div>
-              )}
-            </div>
-            
-            {/* Footer: Description Left, Button Right */}
-            <div className="ec-footer">
-              <div className="ec-footer-content">
-                <p className="ec-description">{prod.description}</p>
+
+              {/* Right Side: Content */}
+              <div className="psc-content-side">
                 
-                {/* Compact Features Grid */}
-                <div className="ec-features">
-                  {prod.features.map((feat, i) => (
-                    <div key={i} className="ec-feature-item">
-                      <span className="ec-feature-dot"></span> {feat}
-                    </div>
-                  ))}
+                {/* Header: Icon + Title */}
+                <div className="psc-header">
+                  <div className="psc-icon" style={{ background: iconBg }}>
+                    <IconComponent size={22} color={iconColor} />
+                  </div>
+                  <h3 className="psc-title">{prod.name}</h3>
                 </div>
-              </div>
-              
-              <div className="ec-actions">
-                <button 
-                  className="ec-btn ec-btn-outline" 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (!prod.comingSoon) {
-                      navigate('/product/' + prod.id);
-                    }
-                  }}
-                  disabled={prod.comingSoon}
-                >
-                  View Details
-                </button>
-                <button 
-                  className="ec-btn ec-btn-primary" 
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (!prod.comingSoon) {
-                      navigate(`/get-started?product=${prod.name}`);
-                    }
-                  }}
-                  disabled={prod.comingSoon}
-                >
-                  Get Demo &rarr;
-                </button>
+
+                {/* Badges */}
+                <div className="psc-badges">
+                  <span className="psc-badge category-badge">{prod.category}</span>
+                  <span className="psc-badge platform-badge">{prod.platform}</span>
+                </div>
+
+                {/* Description */}
+                <p className="psc-description">{prod.description}</p>
+
+                {/* Features List */}
+                <ul className="psc-features-list">
+                  {prod.features.map((feat, i) => (
+                    <li key={i}>
+                      <CheckCircle2 size={16} className="psc-check-icon" style={{ color: iconColor }} />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Actions Footer */}
+                <div className="psc-actions">
+                  <button 
+                    className="psc-link-btn" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (!prod.comingSoon) {
+                        navigate(`/get-started?product=${prod.name}`);
+                      }
+                    }}
+                    disabled={prod.comingSoon}
+                  >
+                    Request Demo <ArrowRight size={16} />
+                  </button>
+                  <button 
+                    className="psc-solid-btn" 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      if (!prod.comingSoon) {
+                        navigate('/product/' + prod.id);
+                      }
+                    }}
+                    disabled={prod.comingSoon}
+                  >
+                    View Details
+                  </button>
+                </div>
+
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <style>{`
@@ -214,86 +230,173 @@ const Products = () => {
           grid-template-columns: 1fr 1fr;
           gap: 2rem;
           width: 100%;
-          max-width: 1200px;
+          max-width: 1350px;
           margin: 0 auto;
           padding: 0 1.5rem;
         }
-        .editorial-card {
-          padding: 1.5rem;
+
+        .product-split-card {
+          display: flex;
+          background: #ffffff;
           border: 1px solid #e2e8f0;
           border-radius: 16px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-          display: flex;
-          flex-direction: column;
-          background: #ffffff;
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .editorial-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
-          border-color: rgba(37, 99, 235, 0.3);
-        }
-        
-        .ec-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 1rem;
-        }
-        .ec-title {
-          font-size: 1rem;
-          font-weight: 700;
-          color: #0f172a;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          max-width: 50%;
-        }
-        .ec-meta {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          align-items: flex-end;
-        }
-        .ec-badge {
-          font-size: 0.65rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          padding: 0.35rem 0.75rem;
-          border-radius: 99px;
-        }
-        .category-badge {
-          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-          color: #1d4ed8;
-          border: 1px solid #bfdbfe;
-        }
-        .platform-badge {
-          background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
-          color: #a21caf;
-          border: 1px solid #f5d0fe;
-        }
-        .badge-label {
-          opacity: 0.6;
-          margin-right: 0.3rem;
-          font-weight: 700;
-        }
-        
-        .ec-image-container {
-          position: relative;
-          width: 100%;
-          border: 1px solid #e2e8f0;
           overflow: hidden;
-          background: #f8fafc;
-          margin-bottom: 1rem;
-          border-radius: 8px;
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
-        .ec-image {
+
+        .product-split-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+          border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .psc-image-side {
+          flex: 1.1;
+          padding: 0;
+          background: #f8fafc;
+          display: flex;
+          align-items: stretch;
+          justify-content: center;
+          position: relative;
+          border-right: 1px solid #f1f5f9;
+        }
+
+        .psc-image {
           width: 100%;
-          max-height: 140px;
-          display: block;
+          height: 100%;
           object-fit: cover;
         }
+
+        .psc-content-side {
+          flex: 0.9;
+          padding: 1.25rem;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .psc-header {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .psc-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+
+        .psc-title {
+          font-size: 1.05rem;
+          font-weight: 800;
+          color: #0f172a;
+          text-transform: uppercase;
+          line-height: 1.2;
+        }
+
+        .psc-badges {
+          display: flex;
+          gap: 0.5rem;
+          margin-bottom: 0.75rem;
+          flex-wrap: wrap;
+        }
+
+        .psc-badge {
+          font-size: 0.65rem;
+          font-weight: 700;
+          padding: 0.25rem 0.75rem;
+          border-radius: 99px;
+          text-transform: uppercase;
+        }
         
+        .category-badge { background: #eff6ff; color: #2563eb; }
+        .platform-badge { background: #f0fdf4; color: #16a34a; }
+
+        .psc-description {
+          font-size: 0.8rem;
+          color: #475569;
+          line-height: 1.5;
+          margin-bottom: 1rem;
+        }
+
+        .psc-features-list {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1rem 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.4rem;
+        }
+
+        .psc-features-list li {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          font-size: 0.75rem;
+          color: #334155;
+          font-weight: 500;
+        }
+
+        .psc-check-icon {
+          flex-shrink: 0;
+        }
+
+        .psc-actions {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: auto;
+          border-top: 1px solid #f1f5f9;
+          padding-top: 1rem;
+        }
+
+        .psc-link-btn {
+          background: transparent;
+          border: none;
+          color: #2563eb;
+          font-weight: 700;
+          font-size: 0.75rem;
+          display: flex;
+          align-items: center;
+          gap: 0.3rem;
+          cursor: pointer;
+          padding: 0;
+          transition: gap 0.2s, color 0.2s;
+        }
+
+        .psc-link-btn:hover:not(:disabled) { 
+          gap: 0.5rem; 
+          color: #1d4ed8; 
+        }
+
+        .psc-solid-btn {
+          background: #2563eb;
+          color: #ffffff;
+          border: none;
+          padding: 0.4rem 1rem;
+          border-radius: 6px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background 0.2s, transform 0.2s;
+        }
+
+        .psc-solid-btn:hover:not(:disabled) { 
+          background: #1d4ed8; 
+          transform: translateY(-1px);
+        }
+
+        .psc-solid-btn:disabled, .psc-link-btn:disabled { 
+          opacity: 0.5; 
+          cursor: not-allowed; 
+        }
+
         .ec-coming-soon-overlay {
           position: absolute;
           inset: 0;
@@ -302,7 +405,9 @@ const Products = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+          z-index: 10;
         }
+        
         .ec-coming-soon-badge {
           background: #0f172a;
           color: white;
@@ -310,113 +415,27 @@ const Products = () => {
           font-weight: 700;
           font-size: 0.9rem;
           letter-spacing: 0.1em;
+          border-radius: 4px;
         }
-        
-        .ec-footer {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-end;
-          gap: 1rem;
-          margin-top: auto;
-        }
-        .ec-footer-content {
-          display: flex;
-          flex-direction: column;
-          gap: 0.75rem;
-          flex: 1;
-        }
-        .ec-description {
-          font-size: 0.85rem;
-          color: #334155;
-          line-height: 1.5;
-          font-weight: 500;
-          margin: 0;
-        }
-        
-        .ec-features {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 0.4rem 1rem;
-        }
-        .ec-feature-item {
-          font-size: 0.72rem;
-          color: #475569;
-          display: flex;
-          align-items: center;
-          gap: 0.4rem;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        .ec-feature-dot {
-          width: 4px;
-          height: 4px;
-          background: #2563eb;
-          border-radius: 50%;
-          flex-shrink: 0;
-        }
-        
-        .ec-actions {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          min-width: 120px;
-        }
-        .ec-btn {
-          font-family: inherit;
-          font-size: 0.75rem;
-          font-weight: 600;
-          padding: 0.5rem 0.75rem;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.2s ease;
-          text-align: center;
-          width: 100%;
-          border: none;
-        }
-        .ec-btn:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-        .ec-btn-primary {
-          background: #2563eb;
-          color: white;
-          box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
-        }
-        .ec-btn-primary:hover:not(:disabled) {
-          background: #1d4ed8;
-          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
-          transform: translateY(-1px);
-        }
-        .ec-btn-outline {
-          background: transparent;
-          color: #334155;
-          border: 1px solid #cbd5e1;
-        }
-        .ec-btn-outline:hover:not(:disabled) {
-          background: #f8fafc;
-          border-color: #94a3b8;
+
+        @media (max-width: 1280px) {
+          .psc-content-side { padding: 1.5rem; }
+          .psc-image-side { padding: 0; }
         }
 
         @media (max-width: 1024px) {
-          .editorial-card {
-            padding: 1.25rem;
-          }
+          .editorial-grid { grid-template-columns: 1fr; max-width: 800px; }
+          .product-split-card { flex-direction: row; }
+          .psc-image-side { padding: 0; }
+          .psc-content-side { padding: 1.5rem; }
         }
+
         @media (max-width: 768px) {
-          .editorial-grid {
-            grid-template-columns: 1fr;
-          }
-          .ec-header {
-            flex-direction: column;
-            gap: 1.5rem;
-          }
-          .ec-title {
-            max-width: 100%;
-          }
-          .ec-meta {
-            text-align: left;
-          }
+          .product-split-card { flex-direction: column; }
+          .psc-image-side { border-right: none; border-bottom: 1px solid #f1f5f9; height: 250px; }
+          .psc-header { align-items: flex-start; }
+          .psc-actions { flex-direction: column; gap: 1rem; align-items: stretch; }
+          .psc-solid-btn, .psc-link-btn { justify-content: center; width: 100%; }
         }
       `}</style>
 

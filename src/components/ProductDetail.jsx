@@ -12,7 +12,7 @@ import gimbooksImg from '../assets/gimbooks_dashboard.png';
 // Dynamic product data to power the page
 const productData = {
   nagarsevak: {
-    name: 'GovTech ERP System',
+    name: 'Krishnaniti ERP System',
     description: 'The ultimate all-in-one GovTech ERP and workflow automation system designed exclusively for Ministers, MLAs, and Corporators to streamline civic management. Connect with citizens, manage your office, and track local development effortlessly.',
     tags: [
       { icon: <Zap size={14} />, text: 'Smart Automation & AI Integration' },

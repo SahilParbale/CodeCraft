@@ -29,10 +29,10 @@ const Projects = () => {
         {/* Projects Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', width: '100%', marginBottom: '3rem' }}>
           
-          {/* Card 1: GovTech ERP System */}
+          {/* Card 1: Krishnaniti ERP System */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden' }}>
-              <img src={nagarsevakImg} alt="GovTech ERP System" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={nagarsevakImg} alt="Krishnaniti ERP System" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <span className="project-tag-pill">Local Governance</span>
             </div>
             
@@ -45,7 +45,7 @@ const Projects = () => {
                 <span className="project-tech-badge-light project-tech-badge-blue">GovTech</span>
               </div>
               
-              <h3 className="project-detail-title">GovTech ERP System</h3>
+              <h3 className="project-detail-title">Krishnaniti ERP System</h3>
               <p className="project-detail-text" style={{ flex: 1 }}>
                 A modern administrative portal helping local representatives digitize ward operations, resolve citizen complaints, and track budgets securely.
               </p>

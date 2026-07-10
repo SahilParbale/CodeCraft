@@ -32,7 +32,7 @@ const Logo = ({ dark = false, scale = 1, horizontal = true }) => {
         }}>
           <div style={{ fontSize: '2.2rem', fontWeight: '800', lineHeight: '1', letterSpacing: '-0.03em', display: 'flex' }}>
             <span style={{ color: textColor }}>CODE</span>
-            <span style={{ background: 'linear-gradient(90deg, #2563eb 0%, #00d2ff 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>CRAFT</span>
+            <span style={{ background: 'linear-gradient(90deg, #2563eb 0%, #00d2ff 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'inline-block' }}>CRΛFT</span>
           </div>
           
           {/* SOLUTIONS dividers */}
@@ -42,10 +42,7 @@ const Logo = ({ dark = false, scale = 1, horizontal = true }) => {
             <div style={{ height: '2px', flex: 1, background: 'linear-gradient(90deg, #00d2ff, #2563eb)', borderRadius: '999px' }}></div>
           </div>
           
-          {/* Slogan */}
-          <div style={{ fontSize: '0.45rem', fontWeight: '800', letterSpacing: '0.12em', color: dark ? '#94a3b8' : '#475569', marginTop: '10px', textAlign: 'center', whiteSpace: 'nowrap' }}>
-            BUILDING <span style={{ color: '#2563eb' }}>CODE.</span> CRAFTING <span style={{ color: '#2563eb' }}>SOLUTIONS.</span> CREATING <span style={{ color: '#00d2ff' }}>IMPACT.</span>
-          </div>
+
         </div>
       </div>
     );
@@ -89,7 +86,7 @@ const Logo = ({ dark = false, scale = 1, horizontal = true }) => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             display: 'inline-block'
-          }}>CRAFT</span>
+          }}>CRΛFT</span>
         </div>
         
         {/* SOLUTIONS dividers */}
@@ -108,18 +105,7 @@ const Logo = ({ dark = false, scale = 1, horizontal = true }) => {
           <div style={{ height: '2px', flex: 1, background: 'linear-gradient(90deg, #00d2ff, #2563eb)', borderRadius: '999px' }}></div>
         </div>
 
-        {/* Slogan */}
-        <div style={{ 
-          fontSize: '0.38rem', 
-          fontWeight: '800', 
-          letterSpacing: '0.12em', 
-          color: dark ? '#94a3b8' : '#475569', 
-          marginTop: '6px',
-          textAlign: 'center',
-          whiteSpace: 'nowrap'
-        }}>
-          BUILDING <span style={{ color: '#2563eb' }}>CODE.</span> CRAFTING <span style={{ color: '#2563eb' }}>SOLUTIONS.</span> CREATING <span style={{ color: '#00d2ff' }}>IMPACT.</span>
-        </div>
+
       </div>
     </div>
   );
