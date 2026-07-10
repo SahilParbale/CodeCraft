@@ -400,7 +400,7 @@ const Products = () => {
 
         @media (max-width: 1024px) {
           .editorial-card {
-            padding: 3rem 2rem;
+            padding: 1.25rem;
           }
         }
         @media (max-width: 768px) {

@@ -53,7 +53,7 @@ const Contact = () => {
         }}>
           
           {/* Left Side - Form (60%) */}
-          <div style={{ flex: '1 1 min(100%, 500px)', padding: '2.5rem 2.25rem' }}>
+          <div className="contact-form-container">
             <span className="section-tag" style={{ marginBottom: '0.75rem', background: '#f0f5ff', border: '1px solid rgba(37, 99, 235, 0.15)', color: 'var(--accent-primary)' }}>LET'S TALK</span>
             <h2 className="section-title" style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0f172a' }}>Let's Build Something Amazing Together</h2>
             <p className="section-subtitle" style={{ fontSize: '1rem', marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>

@@ -196,15 +196,7 @@ const GetStartedForm = () => {
   return (
     <div style={{ background: '#f8fafc', minHeight: 'calc(100vh - 80px)', padding: '3rem 1rem', display: 'flex', justifyContent: 'center' }}>
 
-      <div style={{
-        background: '#ffffff',
-        width: '100%',
-        maxWidth: '700px',
-        borderRadius: '24px',
-        boxShadow: '0 10px 40px rgba(0, 0, 0, 0.04)',
-        padding: '2.5rem 2.25rem',
-        border: '1px solid #e2e8f0'
-      }}>
+      <div className="get-started-card">
 
         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
           {new URLSearchParams(location.search).get('product') && (

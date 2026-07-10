@@ -122,10 +122,8 @@ const Hero = () => {
           </div>
           
           {/* Right Content - Mockup Area */}
-          {/* Right Content - Mockup Area */}
           <div 
-            style={{ flex: '1 1 min(100%, 500px)', position: 'relative', minHeight: '500px', cursor: 'pointer' }} 
-            className="animate-fade-up"
+            className="hero-mockup-wrapper animate-fade-up"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
           >
