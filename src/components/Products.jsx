@@ -36,7 +36,7 @@ const Products = () => {
       platform: 'Web / Cloud',
       description: 'A complete political management platform to streamline voter campaigns, office operations, and analytics.',
       image: nagarsevakImg,
-      features: ['Smart Automation & AI', 'Real-time Tracking', 'Data Analytics', 'Mobile Responsive'],
+      features: ['Complaint Management', 'Election Organization', 'Budget Tracking', 'Detailed Dashboards'],
       comingSoon: false
     },
     {
@@ -46,7 +46,7 @@ const Products = () => {
       platform: 'Web / AR / VR',
       description: 'An AI-powered platform transforming 2D architectural drawings into interactive 3D, AR, and VR experiences.',
       image: builderImg,
-      features: ['Project Registration', 'Document Tracking', 'Compliance Logs', 'Real-time Updates'],
+      features: ['2D to 3D Conversion', 'AR/VR Walkthroughs', 'AI Auto-Drafting', 'Interactive Models'],
       comingSoon: false
     },
     {
@@ -56,7 +56,7 @@ const Products = () => {
       platform: 'Web / App',
       description: 'Smart voter data management with verification, tracking, and deep demographic analytics.',
       image: voterImg,
-      features: ['Voter data management', 'Booth & area mapping', 'Verification system', 'Advanced reporting'],
+      features: ['Electoral Roll Search', 'Booth & Sector Mapping', 'Data Deduplication', 'Demographic Analytics'],
       comingSoon: false
     },
     {
@@ -66,7 +66,7 @@ const Products = () => {
       platform: 'Web / Cloud',
       description: 'Smart accounting and bookkeeping solution for modern businesses of every size.',
       image: gimbooksImg,
-      features: ['Income tracking', 'Invoice management', 'Financial reports', 'Multi-user access'],
+      features: ['Invoice & Billing', 'Expense Tracking', 'GST & Tax Compliance', 'Financial Reporting'],
       comingSoon: false
     },
     {
