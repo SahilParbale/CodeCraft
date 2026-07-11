@@ -3,11 +3,14 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { 
   ArrowLeft, Building2, Zap, Clock, LineChart, Download, ArrowRight, 
   Settings, Users, FolderOpen, Map, Bell, ShieldCheck, Monitor, Smartphone, CheckCircle2, Megaphone, Check,
-  Activity, FileText
+  Activity, FileText, Share2, Bot, Calendar, Inbox, Briefcase
 } from 'lucide-react';
 import nagarsevakImg from '../assets/nagarsevak_dashboard.png';
 import voterImg from '../assets/voter_dashboard.png';
 import gimbooksImg from '../assets/gimbooks_dashboard.png';
+import comingSoonImg from '../assets/coming_soon_placeholder.png';
+import socialhubImg from '../assets/socialhub_cover.png';
+import interviewAiImg from '../assets/interview_ai_dashboard.png';
 
 // Dynamic product data to power the page
 const productData = {
@@ -695,6 +698,148 @@ const productData = {
       { value: '99.9%', label: 'Platform Uptime', icon: <ShieldCheck size={24} /> },
       { value: '4.8★', label: 'App Rating', icon: <Users size={24} /> }
     ]
+  },
+  socialhub: {
+    name: 'SocialHub',
+    description: 'A comprehensive, AI-powered social media management platform designed to unify your social presence. From advanced scraping and automated engagement to deep analytics and scheduling, this platform provides everything you need to grow and manage your social channels efficiently.',
+    tags: [
+      { icon: <LineChart size={14} />, text: 'Analytics & Reporting' },
+      { icon: <Bot size={14} />, text: 'AI & Automation' },
+      { icon: <Calendar size={14} />, text: 'Smart Scheduling' },
+      { icon: <Inbox size={14} />, text: 'Unified Inbox' }
+    ],
+    image: socialhubImg,
+    icon: <Share2 size={32} />,
+    accentColor: '#8b5cf6',
+    keyFunctionalities: [
+      {
+        title: 'Real-Time Analytics Dashboard',
+        icon: <LineChart size={24} />,
+        desc: 'Visual insights into engagement, reach, and audience growth using Recharts.'
+      },
+      {
+        title: 'AI-Powered Suggestions',
+        icon: <Bot size={24} />,
+        desc: 'Leverage OpenAI to generate smart replies, content ideas, and engagement strategies.'
+      },
+      {
+        title: 'Smart Scheduling',
+        icon: <Calendar size={24} />,
+        desc: 'Plan, schedule, and automate posts across multiple platforms from one place.'
+      },
+      {
+        title: 'Unified Inbox',
+        icon: <Inbox size={24} />,
+        desc: 'Manage all your comments, messages, and mentions from different social networks in one central inbox.'
+      },
+      {
+        title: 'Automated Engagement',
+        icon: <Activity size={24} />,
+        desc: 'Quick commenting and automated interactions with built-in limits and safety checks.'
+      },
+      {
+        title: 'Post Search & Discovery',
+        icon: <FolderOpen size={24} />,
+        desc: 'Find trending posts and track keywords using robust scraper services.'
+      }
+    ],
+    versions: [
+      {
+        id: 'socialhub_core',
+        version: 'Core Platform',
+        label: 'All-In-One',
+        status: 'Available',
+        description: 'The complete AI-powered social media management platform designed to unify your social presence.',
+        whatsNew: [
+          '📈 Real-Time Analytics Dashboard',
+          '📊 Data Export',
+          '🤖 AI-Powered Suggestions',
+          '⚡ Automated Engagement',
+          '🛡️ Safety Guards',
+          '📅 Smart Scheduling',
+          '📥 Unified Inbox',
+          '🔎 Post Search & Discovery',
+          '⚙️ Real-Time Notifications',
+          '📝 Audit Logging',
+          '🔐 OAuth Integrations',
+          '🚀 Background Workers'
+        ],
+        compatibility: [
+          { icon: <Monitor size={16} />, text: 'Web Application' },
+          { icon: <Smartphone size={16} />, text: 'Mobile Responsive' }
+        ]
+      }
+    ],
+    stats: [
+      { value: '1M+', label: 'Posts Analyzed', icon: <FileText size={24} /> },
+      { value: '24/7', label: 'AI Moderation', icon: <ShieldCheck size={24} /> },
+      { value: '10+', label: 'Social Platforms', icon: <Share2 size={24} /> },
+      { value: 'Real-Time', label: 'Analytics Sync', icon: <Activity size={24} /> }
+    ]
+  },
+  interview_ai: {
+    name: 'InterviewAI',
+    description: 'An intelligent AI-driven interview platform that conducts mock interviews, evaluates body language, and provides instant performance scoring. Designed for candidates and HR teams to streamline the interview process.',
+    tags: [
+      { icon: <Bot size={14} />, text: 'AI Mock Interviews' },
+      { icon: <Activity size={14} />, text: 'Performance Scoring' },
+      { icon: <Users size={14} />, text: 'Candidate Tracking' },
+      { icon: <CheckCircle2 size={14} />, text: 'Real-time Feedback' }
+    ],
+    image: interviewAiImg,
+    icon: <Users size={32} />,
+    accentColor: '#10b981',
+    keyFunctionalities: [
+      {
+        title: 'AI Mock Interviews',
+        icon: <Bot size={24} />,
+        desc: 'Simulate realistic interview scenarios with an interactive AI avatar tailored to the job description.'
+      },
+      {
+        title: 'Body Language Analysis',
+        icon: <Activity size={24} />,
+        desc: 'Advanced computer vision tracks eye contact, posture, and facial expressions during the interview.'
+      },
+      {
+        title: 'Instant Scoring & Feedback',
+        icon: <CheckCircle2 size={24} />,
+        desc: 'Receive comprehensive reports highlighting strengths, weaknesses, and areas for improvement.'
+      },
+      {
+        title: 'Custom Question Banks',
+        icon: <FolderOpen size={24} />,
+        desc: 'Access thousands of technical and behavioral questions, or upload your own custom sets.'
+      }
+    ],
+    versions: [
+      {
+        id: 'interview_ai_core',
+        version: 'Core Platform',
+        label: 'All-In-One',
+        status: 'Available',
+        description: 'The complete AI interview suite for conducting, analyzing, and reviewing mock interviews.',
+        whatsNew: [
+          '🤖 Interactive AI Avatars',
+          '📊 Real-time Performance Scoring',
+          '👁️ Body Language & Tone Analysis',
+          '📚 Pre-built Question Banks',
+          '📈 Detailed Candidate Reports',
+          '🎥 Session Recording & Playback',
+          '🔗 ATS Integration',
+          '🔒 Enterprise-grade Security'
+        ],
+        compatibility: [
+          { icon: <Monitor size={16} />, text: 'Web Application' },
+          { icon: <Smartphone size={16} />, text: 'Mobile Responsive' }
+        ]
+      }
+    ],
+    stats: [
+      { value: '500K+', label: 'Interviews Conducted', icon: <FileText size={24} /> },
+      { value: '98%', label: 'Scoring Accuracy', icon: <ShieldCheck size={24} /> },
+      { value: '50+', label: 'Supported Roles', icon: <Briefcase size={24} /> },
+      { value: 'Real-Time', label: 'Feedback Sync', icon: <Activity size={24} /> }
+    ]
   }
 };
 
@@ -943,37 +1088,39 @@ const ProductDetail = () => {
                   </div>
                   
                   {/* Premium Tier Tabs (Segmented Control) */}
-                  <div style={{ 
-                    display: 'inline-flex', 
-                    background: '#f1f5f9', 
-                    padding: '0.35rem', 
-                    borderRadius: '12px', 
-                    gap: '0.25rem', 
-                    marginTop: '1.25rem',
-                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.02)'
-                  }}>
-                    {['Basic', 'Pro', 'Advance'].map(tier => (
-                      <button 
-                        key={tier}
-                        onClick={() => setActiveTier(tier)}
-                        style={{
-                          background: activeTier === tier ? 'white' : 'transparent',
-                           color: activeTier === tier ? '#2563eb' : '#64748b',
-                           border: '1px solid',
-                           borderColor: activeTier === tier ? 'rgba(0,0,0,0.05)' : 'transparent',
-                          padding: '0.5rem 1.75rem',
-                          borderRadius: '8px',
-                          fontSize: '0.85rem',
-                          fontWeight: '700',
-                          cursor: 'pointer',
-                          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                          boxShadow: activeTier === tier ? '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)' : 'none'
-                        }}
-                      >
-                        {tier}
-                      </button>
-                    ))}
-                  </div>
+                  {activeVersion.tiers && (
+                    <div style={{ 
+                      display: 'inline-flex', 
+                      background: '#f1f5f9', 
+                      padding: '0.35rem', 
+                      borderRadius: '12px', 
+                      gap: '0.25rem', 
+                      marginTop: '1.25rem',
+                      boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.02)'
+                    }}>
+                      {['Basic', 'Pro', 'Advance'].map(tier => (
+                        <button 
+                          key={tier}
+                          onClick={() => setActiveTier(tier)}
+                          style={{
+                            background: activeTier === tier ? 'white' : 'transparent',
+                             color: activeTier === tier ? '#2563eb' : '#64748b',
+                             border: '1px solid',
+                             borderColor: activeTier === tier ? 'rgba(0,0,0,0.05)' : 'transparent',
+                            padding: '0.5rem 1.75rem',
+                            borderRadius: '8px',
+                            fontSize: '0.85rem',
+                            fontWeight: '700',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                            boxShadow: activeTier === tier ? '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)' : 'none'
+                          }}
+                        >
+                          {tier}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <span style={{ background: '#ecfdf5', color: '#10b981', fontSize: '0.8rem', fontWeight: '700', padding: '0.4rem 0.8rem', borderRadius: '999px' }}>{activeVersion.status}</span>
               </div>

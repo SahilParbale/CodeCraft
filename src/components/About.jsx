@@ -1,27 +1,75 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Shield, Zap, Code, Users } from 'lucide-react';
+import timeline2002Img from '../assets/timeline_2002.jpeg';
+import timeline2004Img from '../assets/timeline_2004.jpeg';
+import timeline2004Img2 from '../assets/timeline_2004_2.jpeg';
+import voterImg from '../assets/voter_dashboard.png';
+import nagarsevakImg from '../assets/nagarsevak_dashboard.png';
+
+const TimelineCarousel = ({ images, rotation }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 6000); // 6 seconds auto-scroll
+    return () => clearInterval(interval);
+  }, [images]);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div className="timeline-image-wrapper" style={{ transform: `rotate(${rotation})` }}>
+      {images.map((img, idx) => (
+        <img 
+          key={idx} 
+          src={img} 
+          alt={`Timeline view ${idx + 1}`} 
+          className="timeline-image" 
+          style={{ 
+            position: 'absolute', 
+            top: 0, 
+            left: 0, 
+            width: '100%',
+            height: '100%',
+            objectFit: 'fill',
+            backgroundColor: '#ffffff',
+            opacity: idx === currentIndex ? 1 : 0, 
+            transition: 'opacity 1s ease-in-out',
+            zIndex: idx === currentIndex ? 2 : 1
+          }} 
+        />
+      ))}
+    </div>
+  );
+};
 
 const About = () => {
   const milestones = [
     {
-      year: '2021',
-      title: 'Advisory Foundation',
-      desc: 'CodeCraft was established by three veteran systems architects with the goal of bringing robust enterprise-level software design to growing tech startups.'
+      year: '2002',
+      title: 'ERP System Designed',
+      desc: 'Our foundational ERP system was conceptualized and deployed, setting the standard for enterprise resource planning in local markets.',
+      images: [timeline2002Img]
     },
     {
-      year: '2023',
-      title: 'Cloud Orchestration Expansion',
-      desc: 'Launched our DevOps and cloud Migration division, helping 30+ client companies move monolithic architectures into resilient, auto-scaling Kubernetes clusters.'
+      year: '2004',
+      title: 'Autodial Software',
+      desc: 'Launched an innovative Autodial software revolutionizing political and enterprise communication through automated voice broadcasting.',
+      images: [timeline2004Img, timeline2004Img2]
     },
     {
       year: '2025',
-      title: 'AI Engineering and LLMOps Integration',
-      desc: 'Began integrating semantic vector models and automated LLM pipelines, scaling capabilities to deliver high-performance intelligence services.'
+      title: 'Election Management App',
+      desc: 'Released our comprehensive Election Management System featuring advanced demographic analytics, booth mapping, and seamless voter verification.',
+      images: [voterImg]
     },
     {
       year: '2026',
-      title: 'Global Tech Dominance',
-      desc: 'Expanded our operations worldwide, creating a unified ecosystem of GovTech, AI, and enterprise ERP solutions that serve millions.'
+      title: 'Krishnaniti ERP System',
+      desc: 'Launched our flagship Krishnaniti ERP system, revolutionizing political office operations with smart complaint management and budget tracking.',
+      images: [nagarsevakImg]
     }
   ];
 
@@ -97,39 +145,29 @@ const About = () => {
             
             <div className="timeline-grid">
               {milestones.map((ms, index) => {
-                const isTop = index % 2 === 0;
-                
+                // Add a slight alternating rotation for the newspaper cutout effect
+                const rotation = index % 2 === 0 ? '-2deg' : '2deg';
                 return (
                   <div key={index} className="timeline-column">
                     
-                    {/* TOP Section (Year for Even, Card for Odd) */}
+                    {/* TOP Section: Image Carousel (Newspaper Cutout Style) */}
                     <div className="timeline-slot top-slot">
-                      {isTop ? (
-                        <div className="timeline-year">{ms.year}</div>
-                      ) : (
-                        <div className="timeline-card">
-                          <h4>{ms.title}</h4>
-                          <p>{ms.desc}</p>
-                        </div>
-                      )}
+                      <TimelineCarousel images={ms.images} rotation={rotation} />
                     </div>
 
-                    {/* Timeline Node */}
+                    {/* Timeline Node with Year */}
                     <div className="timeline-node">
-                      <div className="timeline-dot"></div>
+                      <div className="timeline-year-bubble">{ms.year}</div>
                     </div>
 
-                    {/* BOTTOM Section (Card for Even, Year for Odd) */}
+                    {/* BOTTOM Section: Info Card */}
                     <div className="timeline-slot bottom-slot">
-                      {isTop ? (
-                        <div className="timeline-card">
-                          <h4>{ms.title}</h4>
-                          <p>{ms.desc}</p>
-                        </div>
-                      ) : (
-                        <div className="timeline-year">{ms.year}</div>
-                      )}
+                      <div className="timeline-card">
+                        <h4>{ms.title}</h4>
+                        <p>{ms.desc}</p>
+                      </div>
                     </div>
+
                   </div>
                 );
               })}
@@ -188,7 +226,7 @@ const About = () => {
         }
 
         .timeline-slot {
-          height: 180px;
+          min-height: 280px;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -215,22 +253,46 @@ const About = () => {
           position: relative;
         }
 
-        .timeline-dot {
-          width: 16px;
-          height: 16px;
-          background: #2563eb;
-          border-radius: 50%;
-          box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.15);
+        .timeline-year-bubble {
+          background: #ffffff;
+          color: #2563eb;
+          border: 2px solid #2563eb;
+          font-weight: 800;
+          font-size: 1.1rem;
+          padding: 0.4rem 1.2rem;
+          border-radius: 999px;
           position: absolute;
-          top: -8px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+          z-index: 10;
+          font-family: 'Inter', sans-serif;
+          letter-spacing: 0.05em;
         }
 
-        .timeline-year {
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #111827;
-          font-family: 'Playfair Display', serif;
-          letter-spacing: 0.05em;
+        .timeline-image-wrapper {
+          width: 100%;
+          max-width: 260px;
+          height: 220px;
+          overflow: hidden;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+          border: 6px solid #ffffff;
+          background: #fff;
+          transition: transform 0.3s ease, z-index 0s;
+          position: relative;
+        }
+
+        .timeline-image-wrapper:hover {
+          transform: rotate(0) scale(1.15) !important;
+          z-index: 30;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+        }
+
+        .timeline-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         .timeline-card {
@@ -288,7 +350,7 @@ const About = () => {
             z-index: 1;
           }
           
-          .timeline-dot {
+          .timeline-year-bubble {
             z-index: 2;
           }
         }
@@ -313,11 +375,12 @@ const About = () => {
           }
 
           .timeline-column {
-            flex-direction: row;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             justify-content: flex-start;
             height: auto;
             margin-bottom: 2rem;
+            padding-left: 2rem;
           }
           
           .timeline-column::after {
@@ -326,32 +389,34 @@ const About = () => {
 
           .timeline-slot {
             height: auto;
-            width: auto;
+            width: 100%;
             padding: 0;
             align-items: flex-start;
           }
 
-          .top-slot, .bottom-slot {
-            padding: 0;
-            justify-content: center;
+          .top-slot {
+            padding-bottom: 1rem;
+            justify-content: flex-start;
+          }
+
+          .bottom-slot {
+            padding-top: 1rem;
+            justify-content: flex-start;
           }
 
           .timeline-node {
             position: absolute;
             left: -32px;
-            top: 24px;
+            top: 60px; /* Align with the gap between image and text */
             width: auto;
             height: auto;
           }
 
-          .timeline-dot {
+          .timeline-year-bubble {
             position: static;
-          }
-
-          .timeline-year {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #2563eb;
+            transform: none;
+            font-size: 0.9rem;
+            padding: 0.25rem 0.75rem;
           }
 
           .timeline-card {
@@ -366,13 +431,6 @@ const About = () => {
           .timeline-card:hover {
             transform: none;
             box-shadow: none;
-          }
-          
-          .timeline-column {
-            display: block;
-          }
-          .timeline-slot.top-slot, .timeline-slot.bottom-slot {
-            display: block;
           }
         }
       `}</style>

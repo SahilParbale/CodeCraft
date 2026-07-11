@@ -294,7 +294,7 @@ const Hero = () => {
               <Award size={24} />
             </div>
             <div>
-              <div style={{ fontSize: '1.5rem', fontWeight: '800' }}>4+</div>
+              <div style={{ fontSize: '1.5rem', fontWeight: '800' }}>{new Date().getFullYear() - 2002}+</div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Years Experience</div>
             </div>
           </div>

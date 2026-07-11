@@ -10,6 +10,8 @@ import voterImg from '../assets/voter_dashboard.png';
 import builderImg from '../assets/builder_dashboard.png';
 import gimbooksImg from '../assets/gimbooks_dashboard.png';
 import comingSoonImg from '../assets/coming_soon_placeholder.png';
+import socialhubImg from '../assets/socialhub_cover.png';
+import interviewAiImg from '../assets/interview_ai_dashboard.png';
 
 const Products = () => {
   const navigate = useNavigate();
@@ -47,6 +49,26 @@ const Products = () => {
       description: 'An AI-powered platform transforming 2D architectural drawings into interactive 3D, AR, and VR experiences.',
       image: builderImg,
       features: ['2D to 3D Conversion', 'AR/VR Walkthroughs', 'AI Auto-Drafting', 'Interactive Models'],
+      comingSoon: false
+    },
+    {
+      id: 'socialhub',
+      name: 'SocialHub',
+      category: 'Social Media Management',
+      platform: 'Web Application',
+      description: 'A comprehensive, AI-powered social media management platform designed to unify your social presence and automate engagement.',
+      image: socialhubImg,
+      features: ['AI-Powered Suggestions', 'Real-Time Analytics', 'Smart Scheduling', 'Unified Inbox'],
+      comingSoon: false
+    },
+    {
+      id: 'interview_ai',
+      name: 'InterviewAI',
+      category: 'AI HR & Recruitment',
+      platform: 'Web Application',
+      description: 'An intelligent AI-driven interview platform that conducts mock interviews, evaluates body language, and provides instant performance scoring.',
+      image: interviewAiImg,
+      features: ['AI Mock Interviews', 'Real-time Scoring', 'Body Language Analysis', 'Custom Question Banks'],
       comingSoon: false
     },
     {
