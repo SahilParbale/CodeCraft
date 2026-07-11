@@ -32,7 +32,7 @@ const Projects = () => {
           {/* Card 1: Krishnaniti ERP System */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden' }}>
-              <img src={nagarsevakImg} alt="Krishnaniti ERP System" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={nagarsevakImg} alt="Krishnaniti ERP System" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
               <span className="project-tag-pill">Local Governance</span>
             </div>
             
@@ -62,7 +62,7 @@ const Projects = () => {
           {/* Card 2: Election Management System */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden' }}>
-              <img src={voterImg} alt="Election Management System" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={voterImg} alt="Election Management System" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center' }} />
               <span className="project-tag-pill">Political Tech</span>
             </div>
             
@@ -92,7 +92,7 @@ const Projects = () => {
           {/* Card 3: Build Division AI */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden', background: '#e2e8f0' }}>
-              <img src={builderImg} alt="Build Division AI" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+              <img src={builderImg} alt="Build Division AI" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center' }} />
               <span className="project-tag-pill">Real Estate</span>
             </div>
             
@@ -134,7 +134,7 @@ const Projects = () => {
           {/* Card 4: Gimbooks */}
           <div className="project-card-light" style={{ display: 'flex', flexDirection: 'column' }}>
             <div style={{ position: 'relative', width: '100%', height: '200px', overflow: 'hidden', background: '#e2e8f0' }}>
-              <img src={gimbooksImg} alt="Gimbooks" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={gimbooksImg} alt="Gimbooks" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '30% center' }} />
               <span className="project-tag-pill">Fintech</span>
             </div>
             

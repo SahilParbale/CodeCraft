@@ -152,7 +152,16 @@ const Products = () => {
             >
               {/* Left Side: Image */}
               <div className="psc-image-side">
-                <img src={prod.image} alt={prod.name} className="psc-image" />
+                <img 
+                  src={prod.image} 
+                  alt={prod.name} 
+                  className="psc-image" 
+                  style={
+                    prod.name === 'Krishnaniti ERP System' ? { objectPosition: 'center top' } : 
+                    prod.name === 'Gimbooks' ? { objectPosition: '30% center' } : 
+                    {}
+                  } 
+                />
                 {prod.comingSoon && (
                   <div className="ec-coming-soon-overlay">
                     <span className="ec-coming-soon-badge">COMING SOON</span>
@@ -266,6 +275,7 @@ const Products = () => {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          object-position: left center;
         }
 
         .psc-content-side {
