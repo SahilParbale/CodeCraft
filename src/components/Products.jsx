@@ -9,6 +9,7 @@ import nagarsevakImg from '../assets/nagarsevak_dashboard.png';
 import voterImg from '../assets/voter_dashboard.png';
 import builderImg from '../assets/builder_dashboard.png';
 import gimbooksImg from '../assets/gimbooks_dashboard.png';
+import comingSoonImg from '../assets/coming_soon_placeholder.png';
 
 const Products = () => {
   const navigate = useNavigate();
@@ -74,7 +75,7 @@ const Products = () => {
       category: 'HR Tech',
       platform: 'Web / AI',
       description: 'Automated AI-driven interview assessments to streamline hiring and evaluate candidate skills accurately.',
-      image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=800&q=80',
+      image: comingSoonImg,
       features: ['Automated Screening', 'Skill Evaluation', 'Bias Reduction', 'Detailed Reports'],
       comingSoon: true
     },
@@ -84,7 +85,7 @@ const Products = () => {
       category: 'Mental Health Tech',
       platform: 'Mobile / AI',
       description: 'Intelligent empathetic AI bots providing personalized 24/7 counseling and guidance.',
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80',
+      image: comingSoonImg,
       features: ['24/7 Availability', 'Empathetic AI', 'Private Sessions', 'Mood Tracking'],
       comingSoon: true
     },
@@ -94,7 +95,7 @@ const Products = () => {
       category: 'Public Sector Tech',
       platform: 'Web / Cloud',
       description: 'Large scale enterprise resource planning engineered securely for government administrative departments.',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+      image: comingSoonImg,
       features: ['Secure Architecture', 'Gov Scalability', 'Compliance Ready', 'Audit Trails'],
       comingSoon: true
     },
@@ -104,7 +105,7 @@ const Products = () => {
       category: 'Enterprise Tech',
       platform: 'Web / Cloud',
       description: 'Fully tailored, scalable ERP architecture designed from the ground up for massive corporate operations.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+      image: comingSoonImg,
       features: ['Custom Workflows', 'Legacy Integration', 'High Scalability', 'Advanced Analytics'],
       comingSoon: true
     }
