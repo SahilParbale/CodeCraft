@@ -10,7 +10,7 @@ import voterImg from '../assets/voter_dashboard.png';
 import gimbooksImg from '../assets/gimbooks_dashboard.png';
 import comingSoonImg from '../assets/coming_soon_placeholder.png';
 import socialhubImg from '../assets/socialhub_cover.png';
-import interviewAiImg from '../assets/interview_ai_dashboard.png';
+import interviewAiImg from '../assets/ai_interview_cover.png';
 
 // Dynamic product data to power the page
 const productData = {
@@ -777,8 +777,8 @@ const productData = {
       { value: 'Real-Time', label: 'Analytics Sync', icon: <Activity size={24} /> }
     ]
   },
-  interview_ai: {
-    name: 'InterviewAI',
+  'ai-interview': {
+    name: 'AI Interview',
     description: 'An intelligent AI-driven interview platform that conducts mock interviews, evaluates body language, and provides instant performance scoring. Designed for candidates and HR teams to streamline the interview process.',
     tags: [
       { icon: <Bot size={14} />, text: 'AI Mock Interviews' },

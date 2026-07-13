@@ -11,7 +11,10 @@ import builderImg from '../assets/builder_dashboard.png';
 import gimbooksImg from '../assets/gimbooks_dashboard.png';
 import comingSoonImg from '../assets/coming_soon_placeholder.png';
 import socialhubImg from '../assets/socialhub_cover.png';
-import interviewAiImg from '../assets/interview_ai_dashboard.png';
+import interviewAiImg from '../assets/ai_interview_cover.png';
+import aiCounsellingImg from '../assets/ai_counselling_cover.png';
+import govErpImg from '../assets/gov_erp_cover.png';
+import customErpImg from '../assets/custom_erp_cover.png';
 
 const Products = () => {
   const navigate = useNavigate();
@@ -62,16 +65,6 @@ const Products = () => {
       comingSoon: false
     },
     {
-      id: 'interview_ai',
-      name: 'InterviewAI',
-      category: 'AI HR & Recruitment',
-      platform: 'Web Application',
-      description: 'An intelligent AI-driven interview platform that conducts mock interviews, evaluates body language, and provides instant performance scoring.',
-      image: interviewAiImg,
-      features: ['AI Mock Interviews', 'Real-time Scoring', 'Body Language Analysis', 'Custom Question Banks'],
-      comingSoon: false
-    },
-    {
       id: 'voterpro',
       name: 'Election Management System',
       category: 'Electoral Data Analytics',
@@ -97,7 +90,7 @@ const Products = () => {
       category: 'HR Tech',
       platform: 'Web / AI',
       description: 'Automated AI-driven interview assessments to streamline hiring and evaluate candidate skills accurately.',
-      image: comingSoonImg,
+      image: interviewAiImg,
       features: ['Automated Screening', 'Skill Evaluation', 'Bias Reduction', 'Detailed Reports'],
       comingSoon: true
     },
@@ -107,7 +100,7 @@ const Products = () => {
       category: 'Mental Health Tech',
       platform: 'Mobile / AI',
       description: 'Intelligent empathetic AI bots providing personalized 24/7 counseling and guidance.',
-      image: comingSoonImg,
+      image: aiCounsellingImg,
       features: ['24/7 Availability', 'Empathetic AI', 'Private Sessions', 'Mood Tracking'],
       comingSoon: true
     },
@@ -117,7 +110,7 @@ const Products = () => {
       category: 'Public Sector Tech',
       platform: 'Web / Cloud',
       description: 'Large scale enterprise resource planning engineered securely for government administrative departments.',
-      image: comingSoonImg,
+      image: govErpImg,
       features: ['Secure Architecture', 'Gov Scalability', 'Compliance Ready', 'Audit Trails'],
       comingSoon: true
     },
@@ -127,7 +120,7 @@ const Products = () => {
       category: 'Enterprise Tech',
       platform: 'Web / Cloud',
       description: 'Fully tailored, scalable ERP architecture designed from the ground up for massive corporate operations.',
-      image: comingSoonImg,
+      image: customErpImg,
       features: ['Custom Workflows', 'Legacy Integration', 'High Scalability', 'Advanced Analytics'],
       comingSoon: true
     }
@@ -181,15 +174,11 @@ const Products = () => {
                   className="psc-image" 
                   style={
                     prod.name === 'Krishnaniti ERP System' ? { objectPosition: 'center top' } : 
-                    prod.name === 'Gimbooks' ? { objectPosition: '30% center' } : 
+                    prod.name === 'GimBooks' ? { objectPosition: '30% center' } : 
+                    (prod.name === 'AI Interview' || prod.name === 'AI Counselling' || prod.name === 'Government ERP' || prod.name === 'Custom ERP') ? { objectPosition: 'center' } :
                     {}
                   } 
                 />
-                {prod.comingSoon && (
-                  <div className="ec-coming-soon-overlay">
-                    <span className="ec-coming-soon-badge">COMING SOON</span>
-                  </div>
-                )}
               </div>
 
               {/* Right Side: Content */}
@@ -205,6 +194,9 @@ const Products = () => {
 
                 {/* Badges */}
                 <div className="psc-badges">
+                  {prod.comingSoon && (
+                    <span className="psc-badge coming-soon-badge">COMING SOON</span>
+                  )}
                   <span className="psc-badge category-badge">{prod.category}</span>
                   <span className="psc-badge platform-badge">{prod.platform}</span>
                 </div>
@@ -348,8 +340,13 @@ const Products = () => {
           text-transform: uppercase;
         }
         
-        .category-badge { background: #eff6ff; color: #2563eb; }
-        .platform-badge { background: #f0fdf4; color: #16a34a; }
+        .category-badge { background: #eff6ff; color: #2563eb; border: 1px solid #dbeafe; }
+        .platform-badge { background: #f0fdf4; color: #16a34a; border: 1px solid #dcfce3; }
+        .coming-soon-badge { 
+          background: #fff7ed; 
+          color: #ea580c; 
+          border: 1px solid #ffedd5; 
+        }
 
         .psc-description {
           font-size: 0.8rem;
@@ -433,8 +430,7 @@ const Products = () => {
         .ec-coming-soon-overlay {
           position: absolute;
           inset: 0;
-          background: rgba(255,255,255,0.7);
-          backdrop-filter: blur(4px);
+          background: rgba(0, 0, 0, 0.4);
           display: flex;
           align-items: center;
           justify-content: center;
