@@ -5,42 +5,65 @@ import timeline2004Img from '../assets/timeline_2004.jpeg';
 import timeline2004Img2 from '../assets/timeline_2004_2.jpeg';
 import voterImg from '../assets/voter_dashboard.png';
 import nagarsevakImg from '../assets/nagarsevak_dashboard.png';
+import socialhubImg from '../assets/socialhub_cover.png';
 
-const TimelineCarousel = ({ images, rotation }) => {
+const TimelineColumn = ({ ms, rotation }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (!images || images.length <= 1) return;
+    if (!ms.items || ms.items.length <= 1) return;
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => (prev + 1) % ms.items.length);
     }, 6000); // 6 seconds auto-scroll
     return () => clearInterval(interval);
-  }, [images]);
+  }, [ms.items]);
 
-  if (!images || images.length === 0) return null;
+  if (!ms.items || ms.items.length === 0) return null;
+
+  const currentItem = ms.items[currentIndex];
 
   return (
-    <div className="timeline-image-wrapper" style={{ transform: `rotate(${rotation})` }}>
-      {images.map((img, idx) => (
-        <img 
-          key={idx} 
-          src={img} 
-          alt={`Timeline view ${idx + 1}`} 
-          className="timeline-image" 
-          style={{ 
-            position: 'absolute', 
-            top: 0, 
-            left: 0, 
-            width: '100%',
-            height: '100%',
-            objectFit: 'fill',
-            backgroundColor: '#ffffff',
-            opacity: idx === currentIndex ? 1 : 0, 
-            transition: 'opacity 1s ease-in-out',
-            zIndex: idx === currentIndex ? 2 : 1
-          }} 
-        />
-      ))}
+    <div className="timeline-column">
+      
+      {/* TOP Section: Image Carousel (Newspaper Cutout Style) */}
+      <div className="timeline-slot top-slot">
+        <div className="timeline-image-wrapper" style={{ transform: `rotate(${rotation})` }}>
+          {ms.items.map((item, idx) => (
+            <img 
+              key={idx} 
+              src={item.image} 
+              alt={item.title} 
+              className="timeline-image" 
+              style={{ 
+                position: 'absolute', 
+                top: 0, 
+                left: 0, 
+                width: '100%',
+                height: '100%',
+                objectFit: 'fill',
+                backgroundColor: '#ffffff',
+                opacity: idx === currentIndex ? 1 : 0, 
+                transition: 'opacity 1s ease-in-out',
+                zIndex: idx === currentIndex ? 2 : 1
+              }} 
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Timeline Node with Year */}
+      <div className="timeline-node">
+        <div className="timeline-year-bubble">{ms.year}</div>
+      </div>
+
+      {/* BOTTOM Section: Info Card */}
+      <div className="timeline-slot bottom-slot">
+        <div className="timeline-card">
+          <h4>{currentItem.title}</h4>
+          <p>{currentItem.desc}</p>
+        </div>
+      </div>
+
     </div>
   );
 };
@@ -49,27 +72,53 @@ const About = () => {
   const milestones = [
     {
       year: '2002',
-      title: 'ERP System Designed',
-      desc: 'Our foundational ERP system was conceptualized and deployed, setting the standard for enterprise resource planning in local markets.',
-      images: [timeline2002Img]
+      items: [
+        {
+          title: 'ERP System Designed',
+          desc: 'Our foundational ERP system was conceptualized and deployed, setting the standard for enterprise resource planning in local markets.',
+          image: timeline2002Img
+        }
+      ]
     },
     {
       year: '2004',
-      title: 'Autodial Software',
-      desc: 'Launched an innovative Autodial software revolutionizing political and enterprise communication through automated voice broadcasting.',
-      images: [timeline2004Img, timeline2004Img2]
+      items: [
+        {
+          title: 'Autodial Software',
+          desc: 'Launched an innovative Autodial software revolutionizing political and enterprise communication through automated voice broadcasting.',
+          image: timeline2004Img
+        },
+        {
+          title: 'Advanced Autodialing',
+          desc: 'Expanded autodial capabilities allowing high-volume outreach, improving engagement strategies for growing enterprises.',
+          image: timeline2004Img2
+        }
+      ]
     },
     {
       year: '2025',
-      title: 'Election Management App',
-      desc: 'Released our comprehensive Election Management System featuring advanced demographic analytics, booth mapping, and seamless voter verification.',
-      images: [voterImg]
+      items: [
+        {
+          title: 'Election Management App',
+          desc: 'Released our comprehensive Election Management System featuring advanced demographic analytics, booth mapping, and seamless voter verification.',
+          image: voterImg
+        },
+        {
+          title: 'SocialHub Platform',
+          desc: 'A comprehensive, AI-powered social media management platform designed to unify your social presence and automate engagement.',
+          image: socialhubImg
+        }
+      ]
     },
     {
       year: '2026',
-      title: 'Krishnaniti ERP System',
-      desc: 'Launched our flagship Krishnaniti ERP system, revolutionizing political office operations with smart complaint management and budget tracking.',
-      images: [nagarsevakImg]
+      items: [
+        {
+          title: 'Krishnaniti ERP System',
+          desc: 'Launched our flagship Krishnaniti ERP system, revolutionizing political office operations with smart complaint management and budget tracking.',
+          image: nagarsevakImg
+        }
+      ]
     }
   ];
 
@@ -147,29 +196,7 @@ const About = () => {
               {milestones.map((ms, index) => {
                 // Add a slight alternating rotation for the newspaper cutout effect
                 const rotation = index % 2 === 0 ? '-2deg' : '2deg';
-                return (
-                  <div key={index} className="timeline-column">
-                    
-                    {/* TOP Section: Image Carousel (Newspaper Cutout Style) */}
-                    <div className="timeline-slot top-slot">
-                      <TimelineCarousel images={ms.images} rotation={rotation} />
-                    </div>
-
-                    {/* Timeline Node with Year */}
-                    <div className="timeline-node">
-                      <div className="timeline-year-bubble">{ms.year}</div>
-                    </div>
-
-                    {/* BOTTOM Section: Info Card */}
-                    <div className="timeline-slot bottom-slot">
-                      <div className="timeline-card">
-                        <h4>{ms.title}</h4>
-                        <p>{ms.desc}</p>
-                      </div>
-                    </div>
-
-                  </div>
-                );
+                return <TimelineColumn key={index} ms={ms} rotation={rotation} />;
               })}
             </div>
           </div>
