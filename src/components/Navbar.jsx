@@ -29,6 +29,10 @@ const Navbar = () => {
         setActiveSection('');
         return;
       }
+      if (location.pathname === '/blog') {
+        setActiveSection('blog');
+        return;
+      }
       
       if (location.pathname !== '/') return;
       
@@ -61,6 +65,11 @@ const Navbar = () => {
     setActiveSection(sectionId);
     setIsMobileMenuOpen(false);
     
+    if (sectionId === 'blog') {
+      navigate('/blog');
+      return;
+    }
+
     if (location.pathname !== '/') {
       navigate('/');
       setTimeout(() => {
@@ -88,6 +97,7 @@ const Navbar = () => {
     { id: 'products', label: 'Products' },
     { id: 'services', label: 'Services' },
     { id: 'about', label: 'About Us' },
+    { id: 'blog', label: 'Blog', isRoute: true },
     { id: 'contact', label: 'Contact Us' }
   ];
 

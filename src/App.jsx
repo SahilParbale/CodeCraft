@@ -11,6 +11,8 @@ import GetStartedForm from './components/GetStartedForm';
 import ServiceDetail from './components/ServiceDetail';
 import ProductDetail from './components/ProductDetail';
 import About from './components/About';
+import Blog from './components/Blog';
+import BlogDetail from './components/BlogDetail';
 import './App.css';
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
           </main>
         } />
         <Route path="/get-started" element={<GetStartedForm />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/service/:id" element={<ServiceDetail />} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
