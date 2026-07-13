@@ -136,7 +136,7 @@ const Footer = () => {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>About Us</a></li>
               <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Our Process</a></li>
-              <li><a href="#about" style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Blog</a></li>
+              <li><a href="/blog" onClick={(e) => { e.preventDefault(); navigate('/blog'); window.scrollTo(0, 0); }} style={{ color: '#94a3b8', textDecoration: 'none', fontSize: '0.8rem', transition: 'color 0.2s', cursor: 'pointer' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-primary)'} onMouseLeave={(e) => e.target.style.color = '#94a3b8'}>Blog</a></li>
             </ul>
           </div>
 
